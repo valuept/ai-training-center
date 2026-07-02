@@ -30,40 +30,32 @@ cycle**. Every non-obvious claim is cited from vendor-neutral primary sources
 
 ## Install in GitHub Copilot desktop
 
-1. **Download the repo** — clone or download-ZIP:
+This repo is a GitHub Copilot **plugin marketplace**, so you install it from
+inside the app — no cloning, no copying folders.
+
+1. In GitHub Copilot desktop, open **plugin / marketplace management** and
+   **add a marketplace from GitHub**, pointing at this repo:
    ```
-   git clone https://github.com/valuept/ai-training-center
+   valuept/ai-training-center
    ```
-2. **Install it as an agent** — copy the whole `ai-training-center` folder into
-   your Copilot plugins folder, then restart the app:
-   ```
-   ~/.copilot/installed-plugins/ai-training-center/
-   ```
-   (On Windows that's `C:\Users\<you>\.copilot\installed-plugins\`.) The app
-   picks up the agent automatically on restart.
-3. **Start a new chat** and choose the agent from the picker:
-   **ai-trainer** (English) or **ai-trainer-de** (German).
+2. Install the **ai-training-center** plugin from that marketplace and make sure
+   it's **enabled**. The app downloads it and registers the agent for you.
+3. **Start a new chat** and select **@ai-trainer** from the agent picker.
 4. Open a **second window** with any AI tool you can type into (Copilot in
    another file, SAP Joule, ChatGPT).
-5. Type `start` (or anything) to begin. Ada greets you, confirms your role
-   (HCM consultant or developer), and runs the hour. Say "skip", "go deeper",
+5. Type `start`. Ada first asks **English or Deutsch**, then confirms your role
+   (HCM consultant or developer) and runs the hour. Say "skip", "go deeper",
    or "pause" any time.
 
-> Nothing else to configure — Ada reads the module content straight from the
-> installed folder (`skills/ai-training-center/references/`).
+> One agent, both languages: **@ai-trainer** asks the learner which language to
+> use on the very first message, then runs the whole session in that language.
 
 ## Languages / Sprachen
 
-The training ships in **English** and **German (Deutsch)** — same curriculum,
-same sources.
-
-| | Pick this agent | Module references |
-|---|---|---|
-| English | **ai-trainer** | `skills/ai-training-center/references/` |
-| Deutsch | **ai-trainer-de** | `skills/ai-training-center/references/de/` |
-
-Ada uses the informal **du** in the German version (warm 1:1 coaching tone). The
-cited sources (`references/SOURCES.md`) stay in their original English.
+Same curriculum, same sources, in **English** and **German (Deutsch)**. Ada asks
+at the start and switches the whole session — informal **du** in German. The
+cited sources (`references/SOURCES.md`) stay in their original English; the
+German module content lives under `skills/ai-training-center/references/de/`.
 
 ## Optional live demo (presenter-led)
 
@@ -76,10 +68,11 @@ hands-on exercise teaches the concept without it.
 
 ```
 ai-training-center/
-  .github/plugin/plugin.json                # agent manifest (loaded by Copilot desktop)
+  .github/plugin/
+    plugin.json                            # plugin manifest
+    marketplace.json                       # makes the repo installable in-app
   agents/
-    ai-trainer.md                          # Ada — English agent
-    ai-trainer-de.md                       # Ada — German agent
+    ai-trainer.md                          # Ada — one agent, asks EN/DE at start
   skills/ai-training-center/
     SKILL.md                               # curriculum spine + rules
     references/

@@ -1,0 +1,19 @@
+{
+  "name": "ai-training-center",
+  "description": "One-hour hands-on AI-agent literacy training for SAP HCM consultants and SAP developers.",
+  "owner": {
+    "name": "valuept",
+    "url": "https://github.com/valuept"
+  },
+  "plugins": [
+    {
+      "name": "ai-training-center",
+      "description": "The @ai-trainer agent facilitates a ~1-hour hands-on AI literacy session (English or German): short concept, live exercise in your own Copilot/Joule, debrief, then an HCM or Developer track.",
+      "source": "./",
+      "category": "productivity",
+      "tags": ["training", "ai-literacy", "agents", "sap", "hcm"],
+      "agents": ["./agents"],
+      "skills": ["./skills/ai-training-center"]
+    }
+  ]
+}
