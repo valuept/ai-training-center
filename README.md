@@ -37,7 +37,7 @@ cycle**. Every non-obvious claim is cited from vendor-neutral primary sources
    VS Code auto-detects the custom agent in `.github/agents/ai-trainer.agent.md`
    — no other setup.
 2. Open **Copilot Chat**, switch the agent picker (top of the chat box) to
-   **AI Trainer**.
+   **AI Trainer** (English) or **KI-Trainer** (German).
 3. Open a **second window** with any AI tool you can type into (Copilot in
    another file, SAP Joule, ChatGPT).
 4. Type `start` (or anything) to begin. Ada greets you, confirms your role
@@ -54,7 +54,21 @@ cycle**. Every non-obvious claim is cited from vendor-neutral primary sources
 
 The repo is also a standard Copilot CLI plugin (`.github/plugin/plugin.json` +
 `agents/` + `skills/`). Drop the folder into `~/.copilot/installed-plugins/…`,
-restart Copilot CLI, and run `@ai-trainer`.
+restart Copilot CLI, and run `@ai-trainer` (English) or `@ai-trainer-de`
+(German).
+
+## Languages / Sprachen
+
+The training ships in **English** and **German (Deutsch)** — same curriculum,
+same sources.
+
+| | VS Code agent | CLI agent | Module references |
+|---|---|---|---|
+| English | **AI Trainer** | `@ai-trainer` | `skills/ai-training-center/references/` |
+| Deutsch | **KI-Trainer** | `@ai-trainer-de` | `skills/ai-training-center/references/de/` |
+
+Ada uses the informal **du** in the German version (warm 1:1 coaching tone). The
+cited sources (`references/SOURCES.md`) stay in their original English.
 
 ## Optional live demo (presenter-led)
 
@@ -68,19 +82,20 @@ hands-on exercise teaches the concept without it.
 ```
 ai-training-center/
   .github/
-    agents/ai-trainer.agent.md             # Ada — VS Code desktop custom agent
+    agents/
+      ai-trainer.agent.md                  # Ada — VS Code custom agent (EN)
+      ai-trainer-de.agent.md               # Ada — VS Code custom agent (DE)
     plugin/plugin.json                     # Copilot CLI plugin manifest
-  agents/ai-trainer.md                     # Ada — Copilot CLI agent
+  agents/
+    ai-trainer.md                          # Ada — Copilot CLI agent (EN)
+    ai-trainer-de.md                       # Ada — Copilot CLI agent (DE)
   skills/ai-training-center/
     SKILL.md                               # curriculum spine + rules
     references/
-      SOURCES.md                           # cited vendor-neutral sources
-      module-1-prompting.md
-      module-2-reliability.md
-      module-3-agents.md
-      module-4-consequences.md
-      branch-hcm.md
-      branch-dev.md
+      SOURCES.md                           # cited vendor-neutral sources (shared)
+      module-1-prompting.md … branch-dev.md   # English modules
+      de/                                  # German modules (same 6 files)
+        module-1-prompting.md … branch-dev.md
 ```
 
 ## Principles
