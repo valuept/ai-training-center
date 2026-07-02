@@ -1,9 +1,10 @@
 # AI Training Center
 
 A **one-hour, hands-on AI-agent literacy training** for SAP HCM consultants and
-SAP developers, packaged as a shareable GitHub Copilot CLI plugin.
+SAP developers, packaged as a **custom agent for GitHub Copilot** (VS Code
+desktop). Also works as a Copilot CLI plugin.
 
-A facilitator agent — **Ada** (`@ai-trainer`) — runs the session: it presents a
+A facilitator agent — **Ada** — runs the session: it presents a
 concept in a couple of sentences, gives you an exercise to run in **your own AI
 tool** (GitHub Copilot, SAP Joule, ChatGPT — whatever you have, in a second
 window), waits, and debriefs. No backend, no API keys, no setup beyond having an
@@ -26,30 +27,34 @@ human-in-the-loop, augmentation vs replacement, and the **agentic development
 cycle**. Every non-obvious claim is cited from vendor-neutral primary sources
 (Anthropic, Google, Google DeepMind) in `skills/ai-training-center/references/SOURCES.md`.
 
-## How a teammate runs it
+## Install in GitHub Copilot desktop (VS Code)
 
-1. Make sure the plugin is available to Copilot CLI (see **Install** below).
-2. Open a **second window** with any AI tool you can type into.
-3. Start the facilitator:
+1. **Download the repo:** clone or download-ZIP this repo and open the folder in
+   **VS Code** with the GitHub Copilot extension.
    ```
-   @ai-trainer
+   git clone https://github.com/valuept/ai-training-center
    ```
-   Ada greets you, confirms your role (HCM consultant or developer), and runs
-   the hour. Say "skip", "go deeper", or "pause" any time.
+   VS Code auto-detects the custom agent in `.github/agents/ai-trainer.agent.md`
+   — no other setup.
+2. Open **Copilot Chat**, switch the agent picker (top of the chat box) to
+   **AI Trainer**.
+3. Open a **second window** with any AI tool you can type into (Copilot in
+   another file, SAP Joule, ChatGPT).
+4. Type `start` (or anything) to begin. Ada greets you, confirms your role
+   (HCM consultant or developer), and runs the hour. Say "skip", "go deeper",
+   or "pause" any time.
 
-## Install / share
+> Keep the repo folder open as your workspace — Ada reads the module content
+> from `skills/ai-training-center/references/`. To make the agent available in
+> **every** workspace instead, copy `.github/agents/ai-trainer.agent.md` into
+> your user agents folder (`~/.copilot/agents/`), but then open this repo folder
+> when you run the session so the references are reachable.
 
-This is a standard Copilot CLI plugin (`.github/plugin/plugin.json` +
-`agents/` + `skills/`). To share it with your team, either:
+## Also works in Copilot CLI
 
-- **Via repo:** keep the `ai-training-center/` folder in a repo your teammates
-  can clone, and have them add it to their Copilot CLI plugins, **or**
-- **Copy in:** drop the `ai-training-center/` folder into their Copilot
-  installed-plugins directory (`~/.copilot/installed-plugins/…` on the machine)
-  so `@ai-trainer` and the `ai-training-center` skill load.
-
-After installing, reload/restart Copilot CLI and confirm `@ai-trainer` is
-listed.
+The repo is also a standard Copilot CLI plugin (`.github/plugin/plugin.json` +
+`agents/` + `skills/`). Drop the folder into `~/.copilot/installed-plugins/…`,
+restart Copilot CLI, and run `@ai-trainer`.
 
 ## Optional live demo (presenter-led)
 
@@ -62,8 +67,10 @@ hands-on exercise teaches the concept without it.
 
 ```
 ai-training-center/
-  .github/plugin/plugin.json
-  agents/ai-trainer.md                     # Ada — the facilitator
+  .github/
+    agents/ai-trainer.agent.md             # Ada — VS Code desktop custom agent
+    plugin/plugin.json                     # Copilot CLI plugin manifest
+  agents/ai-trainer.md                     # Ada — Copilot CLI agent
   skills/ai-training-center/
     SKILL.md                               # curriculum spine + rules
     references/
