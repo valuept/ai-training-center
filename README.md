@@ -41,14 +41,16 @@ inside the app — no cloning, no copying folders.
 2. Install the **ai-training-center** plugin from that marketplace and make sure
    it's **enabled**. The app downloads it and registers the agent for you.
 3. **Start a new chat** and select **@ai-trainer** from the agent picker.
-4. Type `start`. Ada first asks **English or Deutsch**, then which **session
-   type** you want:
-   - **A — Guided hour**: the SAP-tailored ~60-minute curriculum above (HCM or
+4. Type `start`. Ada is fully **menu-driven** — you reply with a number, no typing
+   needed. She first asks **1) English / 2) Deutsch**, then which **session type**
+   you want:
+   - **1 — Guided hour**: the SAP-tailored ~60-minute curriculum above (HCM or
      developer branch).
-   - **B — AI topics at your level**: Ada checks your AI knowledge level and
+   - **2 — AI topics at your level**: Ada checks your AI knowledge level and
      teaches AI concepts from fundamentals to advanced — **agents first**, plus
      the core vocabulary and hands-on "how does it know that?" trust questions.
-   Say "skip", "go deeper", or "pause" any time.
+   Options like **Skip**, **Go deeper**, and **Pause** are always offered as
+   numbers. You only type real text when an exercise asks you to write a prompt.
 
 > One agent, both languages: **@ai-trainer** asks the learner which language to
 > use on the very first message, then runs the whole session in that language.
