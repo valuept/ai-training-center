@@ -42,6 +42,25 @@ Takeaways used:
   **Frontier Safety Framework** to stay ahead of severe risks — i.e. factuality
   and oversight are active, unsolved problems, not afterthoughts.
 
+## [GITHUB-COPILOT-DOCS] — GitHub, "GitHub Copilot CLI" documentation
+https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview
+https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills
+https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-hooks
+Takeaways used (product facts, not claims about AI behavior):
+- **Slash commands** in an interactive session: `/agent`, `/mcp add`, `/usage`,
+  `/context`, `/compact`, `/add-dir`, `/cwd` or `/cd`, `/resume`, `/every`,
+  `/after`, `/sandbox enable`, `/login`; plus `@path` to attach a file and `!`
+  to run a shell command directly. Verified against the docs 2026-07.
+- **Skills** are folders with a `SKILL.md` (YAML frontmatter: `name`,
+  `description`, optional `license`, optional `allowed-tools`) plus optional
+  scripts/resources. Project skills live in `.github/skills/<name>/`; personal
+  skills in `~/.copilot/skills/<name>/`.
+- **Hooks** are `.json` files (`.github/hooks/` per repo, `~/.copilot/hooks/`
+  per user) with a `version` and a `hooks` map of events — `sessionStart`,
+  `sessionEnd`, `userPromptSubmitted`, `preToolUse`, `postToolUse`,
+  `errorOccurred`, `agentStop` — each running a `bash` and/or `powershell`
+  command at that point.
+
 ## Note on the on-hand PDF
 An attached "Building Effective AI Agents — Architecture Patterns" PDF exists in
 the user's Copilot attachments. Not cited directly; its themes are covered by

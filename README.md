@@ -7,9 +7,9 @@ terminal, no setup.
 
 A facilitator agent — **Ada** — runs the session: it presents a
 concept in a couple of sentences, gives you an exercise to run in **your own AI
-tool** (GitHub Copilot, SAP Joule, ChatGPT — whatever you have, in a second
-window), waits, and debriefs. No backend, no API keys, no setup beyond having an
-AI tool open.
+tool** (GitHub Copilot, SAP Joule, ChatGPT — whatever you have), waits, and
+debriefs. No backend, no API keys, no setup. Some exercises you run right there
+with Ada; only a few ask you to open a second AI tool, and Ada tells you when.
 
 ## What it teaches (≈60 min)
 
@@ -41,9 +41,7 @@ inside the app — no cloning, no copying folders.
 2. Install the **ai-training-center** plugin from that marketplace and make sure
    it's **enabled**. The app downloads it and registers the agent for you.
 3. **Start a new chat** and select **@ai-trainer** from the agent picker.
-4. Open a **second window** with any AI tool you can type into (Copilot in
-   another file, SAP Joule, ChatGPT).
-5. Type `start`. Ada first asks **English or Deutsch**, then which **session
+4. Type `start`. Ada first asks **English or Deutsch**, then which **session
    type** you want:
    - **A — Guided hour**: the SAP-tailored ~60-minute curriculum above (HCM or
      developer branch).

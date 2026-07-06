@@ -25,8 +25,9 @@ Shared hour, with a short role-specific branch near the end.
 ## Design principles (the non-negotiables)
 1. **Hands-on over lecture.** ≤2 short concept turns, then an exercise. The
    learner's tool does the talking.
-2. **Real tool, no infra.** They use their own Copilot/Joule in a second window.
-   No backend, no API keys, no microsite.
+2. **Real tool, no infra.** They use their own Copilot/Joule — right here in the
+   session, or in a second window only when an exercise needs one. No backend, no
+   API keys, no microsite.
 3. **Sourced, not invented.** Every non-obvious claim ties to
    `references/SOURCES.md` (Anthropic, Google, Google DeepMind — vendor-neutral
    primary sources).
@@ -58,6 +59,10 @@ At the start `@ai-trainer` asks language, then offers:
   (agent, agent loop, harness, ground truth, tool use…) and **"how does it know
   that?" trust questions**. Catalog: `references/topics-ai.md`
   (German: `references/de/themen-ki.md`).
+- **Optional add-on (after A or B) — Copilot power tools**: useful slash commands,
+  and how to build a Skill and a Hook, each with a micro-exercise.
+  Reference: `references/copilot-power-tools.md`
+  (German: `references/de/copilot-power-tools.md`).
 
 ## Optional live demo (presenter-led)
 For module 3, a presenter can run the real `agent0` CLI in this repo to show
@@ -70,5 +75,6 @@ self-run session.
 - `references/module-1-prompting.md` … `module-4-consequences.md` — shared blocks
 - `references/branch-hcm.md`, `references/branch-dev.md` — the two tracks
 - `references/topics-ai.md` — adaptive AI-topics catalog (session type B)
-- `references/de/` — German module + topics files (`themen-ki.md`)
+- `references/copilot-power-tools.md` — slash commands + how to build skills & hooks (optional add-on)
+- `references/de/` — German module + topics files (`themen-ki.md`, `copilot-power-tools.md`)
 - `references/SOURCES.md` — cited vendor-neutral sources
