@@ -184,6 +184,35 @@ for reasoning). Measure with evals, not vibes. *(General industry knowledge.)*
 data; in people-facing SAP HCM use (hiring, evaluation) this is a live risk that
 needs human oversight and testing, not blind trust. [DEEPMIND-SAFETY]
 
+**29. Memory architectures for agents.** Three types: *in-context* (everything in
+the current prompt window — fast, but bounded by the context limit); *external*
+(a vector database retrieved each turn — scales for large knowledge bases, adds
+retrieval latency and errors); *session/episodic* (key facts stored and recalled
+across sessions — raises privacy questions). Pick deliberately: in-context for
+short tasks, external for long-running knowledge-heavy agents. *(General industry
+knowledge.)*
+
+**30. Red-teaming & evaluating agents.** Before deploying an agent, test it like a
+system: build an *eval set* (input → expected output), run *adversarial probes*
+(malicious, ambiguous, edge-case inputs), and do *red-teaming* (actively try to
+break it — prompt injection, goal hijacking, unexpected tool calls). [DEEPMIND-SAFETY]
+*Why:* "feels right in the demo" is not a safety argument for an autonomous system.
+
+**31. AI in the SAP ecosystem.** Joule (SAP's embedded assistant across
+SuccessFactors, S/4HANA and SAP Build), SAP Build (low-code automation with GenAI
+actions), BTP AI Core + GenAI Hub (deploy and proxy models enterprise-grade with
+SAP-scoped data processing). *Why:* where your daily SAP tools are heading in the
+next 12–18 months — you will encounter these whether you build or configure.
+*(General product knowledge; no release dates or roadmap claims.)*
+
+**32. Agentic cost & context management.** LLM calls cost money and time; long
+context windows cost proportionally more. Practical patterns: keep prompts lean
+(trim chat history with `/compact`), use small/fast models for classification and
+large/slow ones for reasoning, batch independent calls in parallel, and measure
+with `/usage`. [ANTHROPIC-AGENTS] *Why:* agents that loop run many calls —
+unmanaged, costs compound fast.
+
+
 ---
 
 ## Agents in depth (teach this to everyone)

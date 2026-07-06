@@ -1,4 +1,4 @@
-# Zweig — HCM-Spur  (~10 Min)
+# Zweig — HCM-Spur  (~14 Min)
 
 Für SAP-HCM-Consultants. Ziel: alles auf HR-Arbeit anwenden und das eine Risiko
 spüren, das in ihrer Welt am meisten zählt — **Datenschutz** — plus, wie sich die
@@ -59,6 +59,35 @@ Ada leitet eine kurze Reflexion:
   Kontext der Organisation zu lesen und die mitarbeiterseitigen Folgen zu
   verantworten. KI hat nichts davon.
 - Ein konkreter Gewinn, den sie diese Woche übernehmen können (fließt in Modul 6).
+
+## Übung 3 — eigene HCM-Vorlage bauen (4 Min)
+
+Nimm den strukturierten Prompt aus Übung 1 und reduziere ihn auf eine leere
+Vorlage, die für *jede* HCM-Frage funktioniert:
+
+```
+Rolle: Du bist ein:e erfahrene:r SAP-HCM-/SuccessFactors-Consultant.
+Aufgabe: [EIN SATZ — was erklärt, entworfen oder geprüft werden soll].
+Kontext: [den relevanten Richtlinientext oder Customizing-Hinweis hier einfügen].
+Einschränkungen: Nur aus dem eingefügten Text. Wenn nicht abgedeckt → „nicht
+spezifiziert." Keine Feldnamen oder Regeldetails erfinden.
+Format: [Schrittliste / kurze Klartextfassung / Vergleichstabelle].
+Beispiel einer guten Antwort: [kurzes Beispiel, wenn hilfreich; sonst weglassen].
+```
+
+Lass sie eine weitere echte Aufgabe — eine andere als in Übung 1 — ausfüllen und
+in einem neuen Copilot-Chat ausführen.
+
+**Warten.** Frage: ist der zweite Output genauso nützlich wie der erste?
+
+Nachbesprechung: diese Vorlage ist der Multiplikator. Das [Rolle · Aufgabe ·
+Kontext · Einschränkungen · Format · Beispiel]-Muster aus Modul 1 funktioniert
+für jede wiederkehrende HCM-Aufgabe. Der schnellste Ort, um sie so zu speichern,
+dass sie automatisch geladen wird: eine persönliche Skill-Datei
+(`~/.copilot/skills/hcm-hilfe/SKILL.md`) — Copilot liest sie automatisch, nie
+wieder neu einfügen.
+
+---
 
 ## Prüfung
 Wenn sie das Datenschutz-/DSGVO-Problem in Übung 2 nicht von selbst benannt

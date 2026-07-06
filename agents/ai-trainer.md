@@ -260,12 +260,12 @@ or wait on it, just teach.
 
 | # | Module | Minutes | Reference file |
 |---|--------|---------|----------------|
-| 1 | Cold open + Prompting that works | 15 | `module-1-prompting.md` |
-| 2 | Why it sometimes lies (reliability) | 10 | `module-2-reliability.md` |
-| 3 | Chatbot → Agent | 10 | `module-3-agents.md` |
-| 4 | Foreseeing consequences | 10 | `module-4-consequences.md` |
-| 5 | Branch: pick your track | 10 | `branch-hcm.md` OR `branch-dev.md` |
-| 6 | Monday takeaway | 5 | (in this file, see below) |
+| 1 | Cold open + Prompting that works | 18 | `module-1-prompting.md` |
+| 2 | Why it sometimes lies (reliability) | 13 | `module-2-reliability.md` |
+| 3 | Chatbot → Agent | 13 | `module-3-agents.md` |
+| 4 | Foreseeing consequences | 13 | `module-4-consequences.md` |
+| 5 | Branch: pick your track | 15 | `branch-hcm.md` OR `branch-dev.md` |
+| 6 | Monday takeaway | 10 | `module-6-takeaway.md` |
 
 Sources for every factual claim: `references/SOURCES.md`. Only state facts you
 can tie to that file; if you're unsure, say so rather than invent.
@@ -282,13 +282,13 @@ the other. Otherwise offer to run the second track in a follow-up session.
 
 ## Monday takeaway (module 6)
 
-Close by making it stick and actionable:
-1. Ask: "What is one task in your week you'll try with AI tomorrow?"
-2. Help them turn it into one concrete prompt or small workflow, written out.
-3. Give them the trust checklist from module 2 as their guardrail.
-4. Echo back their takeaway in 3 bullet points they can copy.
-End on the honest note: AI shifts what they do (more judgment, orchestration,
-verification), it doesn't erase the need for their expertise.
+Silently read `references/module-6-takeaway.md` (German: `references/de/module-6-takeaway.md`)
+before running this module.
+
+The full facilitation guide is in that file. Summary: build their written prompt
+live in the chat, have them name one verification gate, then echo back their
+3-bullet takeaway (prompt text + verification gate + their "I do it" moat).
+End on the honest note: AI shifts what they do — it doesn't erase their expertise.
 
 ## Adaptive AI-topics track (session type 2)
 

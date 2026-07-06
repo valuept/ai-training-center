@@ -159,6 +159,68 @@ macht — die Schleife bekommt bei jedem Schritt automatisches Feedback.
 
 ---
 
+## 4. Abschlussprojekt — ein ABAP-Review-Micro-Workflow  (~5 Min)
+
+Alle drei zusammenbinden: einen kleinen ABAP-Code-Review-Skill bauen, der an einen
+`postToolUse`-Audit-Hook gekoppelt ist — eine automatische Guardrail in der
+agentischen Schleife.
+
+**Schritt 1 — den Skill anlegen.**
+`~/.copilot/skills/abap-review/SKILL.md` erstellen:
+
+```markdown
+---
+name: abap-review
+description: Prüft ABAP-Code auf häufige Qualitätsprobleme. Verwenden, wenn nach Review, Prüfung oder Audit von ABAP-Code gefragt wird.
+---
+
+Beim Review von ABAP-Code prüfen auf:
+1. Fehlende Fehlerbehandlung (MESSAGE- / CATCH-Blöcke).
+2. Hartkodierte Werte, die ins Customizing oder in Konstanten gehören.
+3. SELECT * statt expliziter Feldlisten.
+4. Fehlendes AUTHORITY-CHECK vor datensensiblen Operationen.
+5. Kein Unit-Test referenziert oder erwähnt.
+
+Jedes Problem kennzeichnen als: [BLOCKER] muss behoben werden | [WARNING] sollte behoben werden | [NOTE] zu erwägen.
+```
+
+**Schritt 2 — den Audit-Hook hinzufügen.**
+`~/.copilot/hooks/abap-audit.json` erstellen:
+
+```json
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "echo \"[AUDIT $(date)] Tool verwendet\" >> ~/.copilot/abap-audit.log",
+        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\abap-audit.log\" -Value \"[AUDIT $(Get-Date)] Tool verwendet\"",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}
+```
+
+**Schritt 3 — anwenden.** Copilot neu starten, dann in einem neuen Chat
+5–10 Zeilen beliebigen ABAP-Codes einfügen und fragen:
+
+```
+Prüfe diesen ABAP-Ausschnitt.
+```
+
+**Warten.** Der Skill lädt automatisch, wendet die Checkliste an, und jeder
+Tool-Aufruf ergänzt eine Zeile in `~/.copilot/abap-audit.log` (prüfen mit
+`!Get-Content $env:USERPROFILE\.copilot\abap-audit.log`). Hat die Checkliste
+etwas entdeckt? [GITHUB-COPILOT-DOCS]
+
+Nachbesprechung: die Schleife hat jetzt **automatisches Feedback bei jedem
+Schritt** — das ist der agentische Entwicklungszyklus mit eingebauten
+Guardrails. [ANTHROPIC-AGENTS]
+
+---
+
 ## Warum das zählt (zurückbinden)
 
 Slash-Befehle = Tempo. Skills = *dein* Wissen, zuverlässig wiederverwendet. Hooks

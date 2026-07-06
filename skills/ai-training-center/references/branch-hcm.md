@@ -1,4 +1,4 @@
-# Branch — HCM track  (~10 min)
+# Branch — HCM track  (~14 min)
 
 For SAP HCM consultants. Goal: apply everything to HR work, and feel the one
 risk that matters most in their world — **data privacy** — plus how the advisory
@@ -55,6 +55,34 @@ Ada leads a short reflection:
   the org's context, and owning the employee-facing consequences. AI has none
   of that.
 - One concrete win they can adopt this week (feed into module 6).
+
+## Exercise 3 — build your reusable HCM template (4 min)
+
+Take the structured prompt from Exercise 1 and strip it to a blank template that
+works for *any* HCM question:
+
+```
+Role: You are a senior SAP HCM / SuccessFactors consultant.
+Task: [ONE SENTENCE — what to explain, draft, or check].
+Context: [PASTE the relevant policy / config note / process description here].
+Constraints: Only use the pasted text. If something isn't covered → say
+"not specified." Don't invent field names or rule details.
+Format: [numbered checklist / short plain-language summary / comparison table].
+Example of a good answer: [short example if helpful; omit if not needed].
+```
+
+Have them fill in one more real task — different from Exercise 1 — and run it in
+a fresh Copilot chat.
+
+**Wait.** Ask: is the second output as useful as the first?
+
+Debrief: this template is the multiplier. The [Role · Task · Context ·
+Constraints · Format · Example] pattern from Module 1 works for every recurring
+HCM task. The fastest place to store it so it auto-loads: a personal skill file
+(`~/.copilot/skills/hcm-assist/SKILL.md`) — Copilot picks it up automatically
+so you never re-paste the instructions.
+
+---
 
 ## Check
 If they didn't flag the PII/GDPR issue in exercise 2 unprompted, don't move on —

@@ -200,6 +200,38 @@ Verzerrungen ihrer Trainingsdaten; in menschenbezogenen SAP-HCM-Anwendungen
 (Einstellung, Bewertung) ist das ein reales Risiko, das menschliche Aufsicht und
 Tests braucht, kein blindes Vertrauen. [DEEPMIND-SAFETY]
 
+**29. Gedächtnis-Architekturen für Agenten.** Drei Typen: *Im-Kontext* (alles im
+aktuellen Prompt-Fenster — schnell, aber durch das Kontextlimit begrenzt);
+*Extern* (eine Vektor-Datenbank, die bei jedem Zug abgefragt wird — skaliert für
+große Wissensspeicher, fügt aber Abruf-Latenz und Fehler hinzu);
+*Sitzungs-/Episoden-Gedächtnis* (Schlüsselfakten über Sitzungen hinweg gespeichert
+und abgerufen — wirft Datenschutzfragen auf). Bewusst wählen: Im-Kontext für kurze
+Aufgaben, Extern für langläufige, wissensintensive Agenten. *(Allgemeines
+Branchenwissen.)*
+
+**30. Red-Teaming & Agenten evaluieren.** Vor dem Einsatz eines Agenten wie ein
+System testen: ein *Eval-Set* aufbauen (Eingabe → erwartete Ausgabe),
+*adversarielle Proben* laufen lassen (bösartige, mehrdeutige, Grenzfall-Eingaben)
+und *Red-Teaming* durchführen (aktiv versuchen, es zu brechen — Prompt Injection,
+Ziel-Kapern, unerwartete Tool-Aufrufe). [DEEPMIND-SAFETY] *Warum:* „fühlt sich
+gut in der Demo an" ist kein Sicherheitsargument für ein autonomes System.
+
+**31. KI im SAP-Ökosystem.** Joule (SAPs eingebetteter Assistent in
+SuccessFactors, S/4HANA und SAP Build), SAP Build (Low-Code-Automatisierung mit
+GenAI-Aktionen), BTP AI Core + GenAI Hub (Modelle enterprise-gerecht einsetzen und
+vermitteln, mit SAP-seitigem Datenschutz). *Warum:* wohin sich deine täglichen
+SAP-Werkzeuge in den nächsten 12–18 Monaten bewegen — du wirst ihnen begegnen,
+egal ob du baust oder konfigurierst. *(Allgemeines Produktwissen; keine
+Veröffentlichungsdaten oder Roadmap-Aussagen.)*
+
+**32. Agentische Kosten & Kontext-Management.** LLM-Aufrufe kosten Geld und Zeit;
+lange Kontextfenster kosten proportional mehr. Praktische Muster: Prompts schlank
+halten (Gesprächsverlauf mit `/compact` trimmen), kleine/schnelle Modelle für
+Klassifikation und starke/langsame für Schlussfolgerungen, unabhängige Aufrufe
+parallelisieren und mit `/usage` messen. [ANTHROPIC-AGENTS] *Warum:* Agenten, die
+in Schleifen laufen, machen viele Aufrufe — unkontrolliert, wachsen die Kosten
+schnell.
+
 ---
 
 ## Agenten im Detail (für alle)

@@ -147,6 +147,67 @@ after Copilot edits a file is exactly the kind of guardrail that makes an
 
 ---
 
+## 4. Capstone — an ABAP-review micro-workflow  (~5 min)
+
+Tie all three together: build a tiny ABAP code-review skill wired to a
+`postToolUse` audit hook — a live guardrail in the agentic loop.
+
+**Step 1 — create the skill.**
+Create `~/.copilot/skills/abap-review/SKILL.md`:
+
+```markdown
+---
+name: abap-review
+description: Reviews ABAP code for common quality issues. Use when asked to review, check, or audit ABAP code.
+---
+
+When reviewing ABAP code, check for:
+1. Missing error handling (MESSAGE / CATCH blocks).
+2. Hardcoded values that belong in customising or constants.
+3. SELECT * instead of explicit field lists.
+4. Missing AUTHORITY-CHECK before data-sensitive operations.
+5. No unit test referenced or mentioned.
+
+Flag each issue as: [BLOCKER] must fix | [WARNING] should fix | [NOTE] to consider.
+```
+
+**Step 2 — add the audit hook.**
+Create `~/.copilot/hooks/abap-audit.json`:
+
+```json
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "echo \"[AUDIT $(date)] tool used\" >> ~/.copilot/abap-audit.log",
+        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\abap-audit.log\" -Value \"[AUDIT $(Get-Date)] tool used\"",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}
+```
+
+**Step 3 — use it.** Restart Copilot, then in a new chat paste 5–10 lines of any
+ABAP you have to hand and ask:
+
+```
+Review this ABAP snippet.
+```
+
+**Wait.** The skill auto-loads, applies the checklist, and each tool call appends
+a line to `~/.copilot/abap-audit.log` (check it with `!cat ~/.copilot/abap-audit.log`
+or `!Get-Content $env:USERPROFILE\.copilot\abap-audit.log`). Did the checklist
+surface anything? [GITHUB-COPILOT-DOCS]
+
+Debrief: the loop now has **automatic feedback at every step** — that's the
+agentic development cycle with your guardrails baked in from the start.
+[ANTHROPIC-AGENTS]
+
+---
+
 ## Why this matters (tie it back)
 
 Slash commands = speed. Skills = *your* knowledge, reused reliably. Hooks = *your*
