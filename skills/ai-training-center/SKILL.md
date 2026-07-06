@@ -6,9 +6,11 @@ description: 'Hands-on AI-agent literacy training for SAP HCM consultants and SA
 # AI Training Center
 
 A facilitated, hands-on hour that teaches SAP colleagues the AI concepts that
-matter for their work and helps them foresee how AI reshapes it. The learner
-does every exercise in **their own AI tool** (Copilot / Joule); the facilitator
-(`@ai-trainer`, "Ada") frames, sets the exercise, waits, and debriefs.
+matter for their work and helps them foresee how AI reshapes it. **The subject
+is AI literacy, not SAP product training** — SAP is the realistic backdrop for
+the exercises. The learner does every exercise in **their own AI tool**
+(Copilot / Joule); the facilitator (`@ai-trainer`, "Ada") frames, sets the
+exercise, waits, and debriefs.
 
 ## When to use
 - A SAP HCM consultant or SAP developer wants practical AI/agent literacy.
@@ -38,12 +40,12 @@ Shared hour, with a short role-specific branch near the end.
 
 | # | Module | Min | Concept |
 |---|--------|-----|---------|
-| 1 | Cold open + Prompting that works | 18 | a prompt is an instruction; specificity, context, examples |
-| 2 | Why it sometimes lies | 13 | hallucination, non-determinism, verification |
-| 3 | Chatbot → Agent | 13 | augmented LLM, tools, memory, the loop, guardrails |
-| 4 | Foreseeing consequences | 13 | augmentation vs replacement, human-in-the-loop |
-| 5 | Branch (HCM or Dev) | 14–15 | role-specific application |
-| 6 | Monday takeaway | 10 | one prompt/workflow to use tomorrow |
+| 1 | Cold open + Prompting that works | 15 | a prompt is an instruction; specificity, context, examples |
+| 2 | Why it sometimes lies | 10 | hallucination, non-determinism, verification |
+| 3 | Chatbot → Agent | 10 | augmented LLM, tools, memory, the loop, guardrails |
+| 4 | Foreseeing consequences | 10 | augmentation vs replacement, human-in-the-loop |
+| 5 | Branch (HCM or Dev) | 10 | role-specific application |
+| 6 | Monday takeaway | 5 | one prompt/workflow to use tomorrow |
 
 All six live in one file: `references/guided-hour.md` (German:
 `references/de/guided-hour.md`). The facilitator reads it once per session,

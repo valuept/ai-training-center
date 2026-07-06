@@ -7,18 +7,19 @@ modules.
 
 ---
 
-# Module 1 — Cold open + Prompting that works  (~18 min)
+# Module 1 — Cold open + Prompting that works  (~15 min)
 
 Goal: they feel the gap between a vague ask and a good one, and leave with a
 repeatable prompting pattern they can use on real SAP work.
 
 Source: [GOOGLE-PROMPTING] (see SOURCES.md).
 
-## Part A — Cold open (5 min): do it, don't hear about it
+## Part A — Cold open (4 min): do it, don't hear about it
 
 Frame (1 turn): "Before any theory — let's just use the thing. Pick a small real
-task from your actual work this week: a policy question, a bit of config to
-explain, a snippet to write, an email to a stakeholder."
+task from your actual work this week. If you're HCM, think 'explain a policy or
+draft a manager-facing answer.' If you're a developer, think 'review a snippet
+or draft a small change.'"
 
 Exercise 1 — the vague ask. Have them paste into their own AI tool:
 ```
@@ -29,7 +30,7 @@ Then **wait.** Ask: "How usable is that answer, 0–10? What's missing?"
 Debrief: most people get a generic 5/10. That gap is the whole training. The
 model isn't dumb — it's guessing at everything you didn't say.
 
-## Part B — Prompting that works (10 min)
+## Part B — Prompting that works (8 min)
 
 Frame (1–2 turns): A prompt is just an **instruction**. The model can't read
 your mind or see your SAP system. [GOOGLE-PROMPTING] gives four levers:
@@ -61,7 +62,7 @@ That's the reusable template — tell them to keep it.
 
 Timebox note: don't stop at one rebuild — Part C turns this into a habit.
 
-## Part C — Iterate, don't restart (5 min)
+## Part C — Iterate, don't restart (3 min)
 
 Frame (1 turn): You rarely nail it in one shot, and you don't need to. Prompting
 is a conversation: keep the good answer and steer it with **one** targeted
@@ -86,7 +87,7 @@ paraphrase, and re-run once.
 
 ---
 
-# Module 2 — Why it sometimes lies  (~13 min)
+# Module 2 — Why it sometimes lies  (~10 min)
 
 Goal: they can predict *when* AI is unreliable and have a habit for catching it.
 This is the module that keeps an SAP professional out of trouble.
@@ -104,19 +105,22 @@ factuality benchmark and a Frontier Safety Framework for exactly this reason
 
 Exercise 1 — provoke a hallucination. Have them ask their own tool something
 precise and checkable from their world, where invention is likely:
-```
-What is the exact SAP OSS note number and title that fixes [a specific
-niche error they know], and quote the note's first line?
-```
-or (developer):
-```
-Give me the exact signature of [an obscure or made-up SAP BAPI/class method],
-including all parameters.
-```
-**Wait.** Ask: "Do you believe it? Can you verify it against the real system?"
+- **HCM example:**
+  ```
+  What exact sentence in our [leave / benefits / payroll] policy says
+  [a very specific rule], and quote it word for word?
+  ```
+- **Developer example:**
+  ```
+  Give me the exact signature of [an obscure or made-up SAP BAPI/class method],
+  including all parameters.
+  ```
+**Wait.** Ask: "Do you believe it? Can you verify it against the real source or
+system?"
 
-Debrief: it often invents a plausible note number / signature. The danger isn't
-that it's wrong — it's that it's wrong *confidently and in the right format*.
+Debrief: it often invents a plausible policy sentence / note number / signature.
+The danger isn't that it's wrong — it's that it's wrong *confidently and in the
+right format*.
 
 Exercise 2 — see the non-determinism. Same prompt, run 2–3 times (new chat each
 time):
@@ -134,8 +138,8 @@ this time paste the real source and force a citation (new chat):
 Using ONLY the text below, answer [the same question]. Quote the exact line you
 used; if the answer isn't in the text, say "not in the source."
 ---
-[paste the real OSS note / the real method signature from the system / the real
-policy paragraph]
+[paste the real policy paragraph / the real method signature from the system /
+the real error text from the system]
 ```
 **Wait.** Ask: is this answer verifiable now? Where did the earlier confidence
 come from?
@@ -146,8 +150,8 @@ ask from memory when you can paste the source.
 
 ## The trust checklist (give them this — it's their guardrail)
 Before you act on an AI answer:
-1. **Is it checkable?** Verify facts, numbers, note IDs, signatures against the
-   real system/docs — never ship an unverified specific.
+1. **Is it checkable?** Verify facts, quoted policy clauses, note IDs, signatures
+   against the real source/system/docs — never ship an unverified specific.
 2. **Did I give it the source?** Grounded-in-your-text answers beat from-memory
    answers. Paste the policy/spec; ask it to quote it.
 3. **Stakes check** — the higher the consequence (payroll, PII, production),
@@ -156,12 +160,12 @@ Before you act on an AI answer:
 
 ### Check
 If their provoked answer happened to be correct, don't hand-wave it — have them
-verify it against the real system anyway. The lesson is the *habit of checking*,
-not that the model failed this once.
+verify it against the real source/system anyway. The lesson is the *habit of
+checking*, not that the model failed this once.
 
 ---
 
-# Module 3 — Chatbot → Agent  (~13 min)
+# Module 3 — Chatbot → Agent  (~10 min)
 
 Goal: they understand what turns a chat assistant into an *agent*, so the word
 "agent" stops being magic and becomes a checklist they can reason about.
@@ -184,11 +188,18 @@ guardrails.**
 
 Exercise — make their tool *act*, not just answer. Have them use their tool's
 agent/tools mode (Copilot agent mode, Joule, etc.) on a small multi-step task:
-```
-Goal: In this project, find every file that mentions "[a term]", summarize
-what each does, and propose one concrete improvement. Show me your plan first,
-then do it step by step.
-```
+- **HCM variant:**
+  ```
+  Goal: In this folder or set of pasted policy/process notes, find every mention
+  of "[a term]", summarize what each says, and propose one ambiguity to clarify.
+  Show me your plan first, then do it step by step.
+  ```
+- **Developer variant:**
+  ```
+  Goal: In this project, find every file that mentions "[a term]", summarize
+  what each does, and propose one concrete improvement. Show me your plan first,
+  then do it step by step.
+  ```
 **Wait.** Ask: "Where did it plan? Where did it use a tool and read a real
 result? Where should it have stopped to ask you?"
 
@@ -199,8 +210,8 @@ wanted it to pause is the **human checkpoint**.
 Exercise 2 — hold the checkpoint. Now practice the human checkpoint deliberately.
 In the same agent chat:
 ```
-Before you change anything, show me ONLY your plan as a numbered list — the files
-you'd touch and why. Do not execute yet.
+Before you act on anything, show me ONLY your plan as a numbered list — the
+files or documents you'd inspect and why. Do not execute yet.
 ```
 Read the plan, reply with **one** correction or constraint (e.g. "don't touch the
 test files", "handle the empty-input case too"), then let it proceed.
@@ -216,8 +227,8 @@ scripted. Agents aren't automatically better, just more autonomous.
 
 ## Optional presenter demo — real agent anatomy with Agent0 (2–3 min)
 
-If a presenter has this repo set up, show a real agent's skeleton. From the repo
-root:
+If a presenter has this repo set up **and there is spare time**, show a real
+agent's skeleton. From the repo root:
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -245,7 +256,7 @@ agent/tools mode and re-run before debriefing.
 
 ---
 
-# Module 4 — Foreseeing consequences  (~13 min)
+# Module 4 — Foreseeing consequences  (~10 min)
 
 Goal: they leave with a personal, honest map of what AI changes in *their* week —
 not a generic "AI will change everything." This is the "foresee the consequences"
@@ -302,7 +313,7 @@ task with "what part would you still need to check or own?" to surface the nuanc
 
 ---
 
-# Branch — HCM track  (~14 min)
+# Branch — HCM track  (~10 min)
 
 For SAP HCM consultants. Goal: apply everything to HR work, and feel the one
 risk that matters most in their world — **data privacy** — plus how the advisory
@@ -315,12 +326,12 @@ useful here — drafting policy explanations, job descriptions, config guidance,
 first-pass answers to employee questions — *if* you handle the data and the
 verification right.
 
-## Exercise 1 — a real HCM assist (4 min)
+## Exercise 1 — a real HCM assist (3 min)
 Have them run, in their own tool, using the module-1 pattern:
 ```
 Role: You are a senior SAP SuccessFactors / HCM consultant.
 Task: Explain to a line manager, in plain language, how [a real HR policy or
-config topic they handle] works, and list the 3 steps they must take.
+system rule they handle] works, and list the 3 steps they must take.
 Context: [paste the relevant policy text or config note].
 Constraints: Only use the pasted policy; if something isn't covered, say
 "not specified" instead of guessing. Cite the policy line you used.
@@ -329,7 +340,7 @@ Format: A short intro + a numbered 3-step checklist.
 **Wait.** Debrief: notice it stayed grounded because they pasted the source and
 forbade guessing — the module-2 trust habit, applied.
 
-## Exercise 2 — spot the privacy trap (4 min)
+## Exercise 2 — spot the privacy trap (3 min)
 This is the point of the HCM branch. Ask them to look at this tempting prompt —
 **do NOT run it** — and say what's wrong:
 ```
@@ -358,7 +369,7 @@ Ada leads a short reflection:
   of that.
 - One concrete win they can adopt this week (feed into module 6).
 
-## Exercise 3 — build your reusable HCM template (4 min)
+## Exercise 3 — build your reusable HCM template (2 min)
 
 Take the structured prompt from Exercise 1 and strip it to a blank template that
 works for *any* HCM question:
@@ -391,7 +402,7 @@ through why pasting real employee data into an uncleared tool is the trap.
 
 ---
 
-# Branch — Developer track  (~15 min)
+# Branch — Developer track  (~10 min)
 
 For SAP developers. Goal: map AI onto the software lifecycle so they see the
 **agentic development cycle** — what changes, and what the developer still owns.
@@ -405,7 +416,7 @@ a loop with ground truth from running code and tests, pausing at human
 checkpoints. The cycle becomes **agentic**: you set intent and constraints, the
 agent drafts across stages, and **you review, verify, and own the merge.**
 
-## Exercise 1 — an agentic coding pass (5 min)
+## Exercise 1 — an agentic coding pass (3 min)
 In their tool's agent/tools mode, on a small real (or sample) task:
 ```
 Goal: Add [a small, well-scoped feature or fix] to this codebase.
@@ -422,7 +433,7 @@ Stop and ask me before changing anything outside [the intended area].
 - **Checkpoint** → "stop and ask before touching X" = the guardrail
   [ANTHROPIC-AGENTS] calls for against compounding errors.
 
-## Exercise 2 — find where it's wrong (3 min)
+## Exercise 2 — find where it's wrong (2 min)
 Have them critically review the agent's own output:
 ```
 Review the code you just wrote. What could be subtly wrong, unsafe, or
@@ -445,7 +456,7 @@ Honest close: the agentic cycle makes you faster and lets you operate at a
 higher level (orchestrating + reviewing) — while making judgment and
 verification more central, not less. Feed one concrete adoption into module 6.
 
-## Exercise 3 — spot the prompt injection risk (5 min)
+## Exercise 3 — spot the prompt injection risk (3 min)
 
 For developers building agentic workflows, prompt injection is the top new attack
 surface. [ANTHROPIC-AGENTS] Look at this crafted input:
@@ -485,7 +496,7 @@ they didn't push back, replay that moment — the whole developer story is that
 
 ---
 
-# Module 6 — Monday takeaway  (~10 min)
+# Module 6 — Monday takeaway  (~5 min)
 
 Goal: they leave with a **written, ready-to-use prompt** and a **named
 verification habit** — not just a good intention. A concrete output beats a warm
@@ -498,7 +509,7 @@ Frame (1 turn): "You've covered the fundamentals, the unreliability, agents, and
 what changes in your work. Now let's turn that into something you can use at 9am
 tomorrow."
 
-## Exercise 1 — write tomorrow's prompt  (4 min)
+## Exercise 1 — write tomorrow's prompt  (2 min)
 
 Ask: *"What is one real task you'll try with AI this week?"*
 
@@ -521,7 +532,7 @@ Concrete example fills Ada can offer if they're blank:
 Debrief: the finished prompt is their deliverable — tangible, copyable, ready
 tomorrow. Everything else from the session is context; this is the takeaway.
 
-## Exercise 2 — name your verification gate  (3 min)
+## Exercise 2 — name your verification gate  (1 min)
 
 Ask: *"For that task — what's one concrete thing you'd check before you act on
 the AI's answer?"* Push for specificity; not "I'd verify it" but something like:
@@ -532,7 +543,7 @@ the AI's answer?"* Push for specificity; not "I'd verify it" but something like:
 **Wait.** Confirm: that check, done consistently, is the habit that keeps them
 safe. It's Module 2's trust checklist applied to *their* specific task.
 
-## Close  (3 min)
+## Close  (2 min)
 
 Echo back their three-bullet takeaway — say it out loud, or type it, so they
 hear it concretely:

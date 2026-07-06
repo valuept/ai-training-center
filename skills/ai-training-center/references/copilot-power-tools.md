@@ -147,32 +147,30 @@ after Copilot edits a file is exactly the kind of guardrail that makes an
 
 ---
 
-## 4. Capstone — an ABAP-review micro-workflow  (~5 min)
+## 4. Capstone — a tiny grounded-review workflow  (~5 min)
 
-Tie all three together: build a tiny ABAP code-review skill wired to a
-`postToolUse` audit hook — a live guardrail in the agentic loop.
+Tie all three together without turning this into a SAP lesson. The AI concept is
+the point: a **skill** stores reusable instructions, a **hook** adds an automatic
+guardrail, and the human still names the verification step.
 
 **Step 1 — create the skill.**
-Create `~/.copilot/skills/abap-review/SKILL.md`:
+Create `~/.copilot/skills/grounded-review/SKILL.md`:
 
 ```markdown
 ---
-name: abap-review
-description: Reviews ABAP code for common quality issues. Use when asked to review, check, or audit ABAP code.
+name: grounded-review
+description: Reviews pasted source text or code using only the supplied content, then names one concrete verification step. Use when asked to explain a policy/process from text or review a code snippet/diff.
 ---
 
-When reviewing ABAP code, check for:
-1. Missing error handling (MESSAGE / CATCH blocks).
-2. Hardcoded values that belong in customising or constants.
-3. SELECT * instead of explicit field lists.
-4. Missing AUTHORITY-CHECK before data-sensitive operations.
-5. No unit test referenced or mentioned.
-
-Flag each issue as: [BLOCKER] must fix | [WARNING] should fix | [NOTE] to consider.
+When given source text or code:
+1. Use only the pasted content.
+2. Quote or point to the exact line/snippet used.
+3. If something is missing, say "not in the source."
+4. End with: Verification step: [one concrete human check].
 ```
 
 **Step 2 — add the audit hook.**
-Create `~/.copilot/hooks/abap-audit.json`:
+Create `~/.copilot/hooks/grounded-review-audit.json`:
 
 ```json
 {
@@ -181,8 +179,8 @@ Create `~/.copilot/hooks/abap-audit.json`:
     "postToolUse": [
       {
         "type": "command",
-        "bash": "echo \"[AUDIT $(date)] tool used\" >> ~/.copilot/abap-audit.log",
-        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\abap-audit.log\" -Value \"[AUDIT $(Get-Date)] tool used\"",
+        "bash": "echo \"[AUDIT $(date)] tool used\" >> ~/.copilot/grounded-review.log",
+        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\grounded-review.log\" -Value \"[AUDIT $(Get-Date)] tool used\"",
         "timeoutSec": 5
       }
     ]
@@ -190,21 +188,30 @@ Create `~/.copilot/hooks/abap-audit.json`:
 }
 ```
 
-**Step 3 — use it.** Restart Copilot, then in a new chat paste 5–10 lines of any
-ABAP you have to hand and ask:
+**Step 3 — use it.** Restart Copilot, then choose the role-flavoured prompt that
+fits them:
 
-```
-Review this ABAP snippet.
-```
+- **HCM-flavoured try:**
+  ```
+  Using only this pasted policy excerpt, draft a manager-facing answer and quote
+  the line you used.
+  ```
+- **Developer-flavoured try:**
+  ```
+  Review this pasted diff using only what is here, and name one test or manual
+  check I should run before merging.
+  ```
 
-**Wait.** The skill auto-loads, applies the checklist, and each tool call appends
-a line to `~/.copilot/abap-audit.log` (check it with `!cat ~/.copilot/abap-audit.log`
-or `!Get-Content $env:USERPROFILE\.copilot\abap-audit.log`). Did the checklist
-surface anything? [GITHUB-COPILOT-DOCS]
+**Wait.** The skill auto-loads, enforces grounding, and each tool call appends a
+line to `~/.copilot/grounded-review.log` (check it with
+`!cat ~/.copilot/grounded-review.log` or
+`!Get-Content $env:USERPROFILE\.copilot\grounded-review.log`). Did it name a
+verification step as well as an answer? [GITHUB-COPILOT-DOCS]
 
-Debrief: the loop now has **automatic feedback at every step** — that's the
-agentic development cycle with your guardrails baked in from the start.
-[ANTHROPIC-AGENTS]
+Debrief: this is the reusable pattern from the whole training in miniature —
+ground the model in real text, add an automatic audit trail, and keep one human
+verification gate explicit. For developers, that's also the agentic development
+cycle in one loop. [ANTHROPIC-AGENTS]
 
 ---
 

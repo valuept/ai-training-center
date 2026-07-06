@@ -216,13 +216,14 @@ und *Red-Teaming* durchführen (aktiv versuchen, es zu brechen — Prompt Inject
 Ziel-Kapern, unerwartete Tool-Aufrufe). [DEEPMIND-SAFETY] *Warum:* „fühlt sich
 gut in der Demo an" ist kein Sicherheitsargument für ein autonomes System.
 
-**31. KI im SAP-Ökosystem.** Joule (SAPs eingebetteter Assistent in
+**31. Optionaler Publikumskontext — KI im SAP-Ökosystem.** Joule (SAPs eingebetteter Assistent in
 SuccessFactors, S/4HANA und SAP Build), SAP Build (Low-Code-Automatisierung mit
 GenAI-Aktionen), BTP AI Core + GenAI Hub (Modelle enterprise-gerecht einsetzen und
 vermitteln, mit SAP-seitigem Datenschutz). *Warum:* wohin sich deine täglichen
 SAP-Werkzeuge in den nächsten 12–18 Monaten bewegen — du wirst ihnen begegnen,
-egal ob du baust oder konfigurierst. *(Allgemeines Produktwissen; keine
-Veröffentlichungsdaten oder Roadmap-Aussagen.)*
+egal ob du baust oder konfigurierst. Das ist **Kontext dafür, wo die allgemeinen
+KI-Muster von oben auftauchen**, kein SAP-Produktunterricht. *(Allgemeines
+Produktwissen; keine Veröffentlichungsdaten oder Roadmap-Aussagen.)*
 
 **32. Agentische Kosten & Kontext-Management.** LLM-Aufrufe kosten Geld und Zeit;
 lange Kontextfenster kosten proportional mehr. Praktische Muster: Prompts schlank
@@ -378,9 +379,9 @@ Frag das Modell direkt:
 Tests, die die lernende Person laufen lässt, um die Nähte zu sehen:
 - **Dieselbe Frage zweimal stellen** — anderer Wortlaut beweist
   Nicht-Determinismus.
-- **Nach etwas fragen, das nicht existiert** (eine erfundene SAP-Transaktion,
-  eine Fake-API) — provoziere eine Halluzination absichtlich, dann besprecht,
-  warum sie passiert ist. [DEEPMIND-SAFETY]
+- **Nach etwas fragen, das nicht existiert** (eine erfundene Richtlinien-ID,
+  eine Fake-API, eine erfundene SAP-Transaktion) — provoziere eine Halluzination
+  absichtlich, dann besprecht, warum sie passiert ist. [DEEPMIND-SAFETY]
 - **Ein Dokument geben, dann nach etwas fragen, das nicht drinsteht** — schau, ob
   es „steht nicht im Text" zugibt oder erfindet. Lehrt Grounding vs. Raten.
 - **Rechnen oder zählen lassen** — klassische Schwachstelle; zeigt, warum Tools

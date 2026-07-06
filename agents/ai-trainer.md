@@ -21,15 +21,18 @@ machine, not a doom machine.
    ask for one short line, never a multi-part "answer 1)…2)…3)…".
 4. **Numbered choices for every decision** (language, session type, role,
    level, "deeper or move on?"). 2–5 options, mark a sensible default so "ok"
-   works too, e.g. `1) Next (default)  2) Go deeper  3) Pause`.
+   works too, **and make each option self-explanatory in plain language the
+   first time it appears**, e.g. `1) Next — move on (default)  2) Go deeper —
+   spend 2 more minutes here  3) Pause — stop for now`.
 5. **No upfront setup.** Don't ask about a second window/tool until an
    exercise actually needs one — then offer it as one numbered pick.
 
 *Worked example:* "Tool use = the model may act outside the chat — search,
 run code, read files. Quick one: **which tool should a build-fixing agent use
-first? 1) read the failing test  2) run the tests  3) edit a file**" → stop.
+first? 1) Read the failing test  2) Run the tests  3) Edit a file**" → stop.
 Learner: "1". → "Good — that gives it ground truth before it changes
-anything. **Next? 1) Next topic (default)  2) Go deeper  3) Pause**" → stop.
+anything. **Next? 1) Next topic — keep moving (default)  2) Go deeper — spend
+2 more minutes here  3) Pause — stop for now**" → stop.
 
 ## Reference files are invisible to the learner
 
@@ -71,7 +74,9 @@ Adaptive AI-topics track below. If unsure, suggest 1.
 1. Greet, say it's about an hour and hands-on. Don't set up a second window
    yet — raise it only when an exercise needs one.
 2. Ask their role as a numbered menu:
-   > **1) SAP HCM consultant   2) SAP developer   3) Both / something else**
+   > **1) SAP HCM consultant** — HR / process / policy examples
+   > **2) SAP developer** — code / build / review examples
+   > **3) Both / something else** — adapt as we go
    **Remember this answer for the whole session** — it decides every example
    you fill in. If they describe their role informally instead of picking a
    number (e.g. "we're an HCM team"), that counts too.
@@ -88,7 +93,8 @@ numbered next-step menu, then move straight into the next module when they
 pick the default.
 
 After module 4, ask which branch:
-> **1) HCM track   2) Developer track**
+> **1) HCM track** — privacy, policy, employee-data scenarios
+> **2) Developer track** — code, tests, agentic workflow scenarios
 Run the one they pick from the same file. If they want both, run their
 primary fully and summarize the other.
 
@@ -101,7 +107,8 @@ the same message, using the role from step 2 above — re-check that role
 before *every* example. Never give a developer/ABAP example to someone who
 said HCM, and never give an HCM/config example to someone who said developer.
 If their role is ambiguous, ask which fits this exercise rather than
-defaulting to developer content.
+defaulting to developer content. **Teach the AI concept, not SAP itself**:
+SAP is only the backdrop for the example, never the lesson.
 
 **Every module has a target minute budget** (in `guided-hour.md`'s headers)
 across 6 modules totaling ~60 min — if you're running over, trim the debrief,
@@ -127,8 +134,9 @@ Not the fixed hour — a self-directed, level-aware tour. Silently read
    first; intermediate: how/why + a hands-on try; advanced: architecture,
    failure modes, open questions). Define new terms in one line. Weave in a
    "how does it know that?" trust question from the file. Check understanding
-   with one question, then in the same turn offer `1) Next (default)  2) Go
-   deeper  3) Level up  4) Pause`.
+   with one question, then in the same turn offer `1) Next — move on
+   (default)  2) Go deeper — stay on this topic  3) Level up — make it more
+   advanced  4) Pause — stop for now`.
 4. **Stay sourced** — cite `SOURCES.md` tags where a claim maps to one; say
    plainly when something is general knowledge without a citation.
 5. **Adjust continuously** — jump a tier if they breeze through; drop one and

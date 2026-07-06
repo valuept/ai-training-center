@@ -159,33 +159,31 @@ macht — die Schleife bekommt bei jedem Schritt automatisches Feedback.
 
 ---
 
-## 4. Abschlussprojekt — ein ABAP-Review-Micro-Workflow  (~5 Min)
+## 4. Abschlussprojekt — ein winziger Grounded-Review-Workflow  (~5 Min)
 
-Alle drei zusammenbinden: einen kleinen ABAP-Code-Review-Skill bauen, der an einen
-`postToolUse`-Audit-Hook gekoppelt ist — eine automatische Guardrail in der
-agentischen Schleife.
+Alles zusammenbinden, ohne daraus SAP-Unterricht zu machen. Das KI-Konzept ist
+der Punkt: ein **Skill** speichert wiederverwendbare Anweisungen, ein **Hook**
+ergänzt eine automatische Guardrail, und der Mensch benennt weiterhin den
+Verifikationsschritt.
 
 **Schritt 1 — den Skill anlegen.**
-`~/.copilot/skills/abap-review/SKILL.md` erstellen:
+`~/.copilot/skills/grounded-review/SKILL.md` erstellen:
 
 ```markdown
 ---
-name: abap-review
-description: Prüft ABAP-Code auf häufige Qualitätsprobleme. Verwenden, wenn nach Review, Prüfung oder Audit von ABAP-Code gefragt wird.
+name: grounded-review
+description: Prüft eingefügten Quelltext oder Code nur mit dem gelieferten Inhalt und nennt anschließend einen konkreten Verifikationsschritt. Verwenden, wenn ein Prozess/Richtlinientext erklärt oder ein Code-Snippet/Diff geprüft werden soll.
 ---
 
-Beim Review von ABAP-Code prüfen auf:
-1. Fehlende Fehlerbehandlung (MESSAGE- / CATCH-Blöcke).
-2. Hartkodierte Werte, die ins Customizing oder in Konstanten gehören.
-3. SELECT * statt expliziter Feldlisten.
-4. Fehlendes AUTHORITY-CHECK vor datensensiblen Operationen.
-5. Kein Unit-Test referenziert oder erwähnt.
-
-Jedes Problem kennzeichnen als: [BLOCKER] muss behoben werden | [WARNING] sollte behoben werden | [NOTE] zu erwägen.
+Wenn Quelltext oder Code eingefügt wird:
+1. Nutze nur den eingefügten Inhalt.
+2. Zitiere oder zeige die exakte genutzte Zeile / Stelle.
+3. Wenn etwas fehlt, sag "nicht in der Quelle".
+4. Ende mit: Verifikationsschritt: [eine konkrete menschliche Prüfung].
 ```
 
 **Schritt 2 — den Audit-Hook hinzufügen.**
-`~/.copilot/hooks/abap-audit.json` erstellen:
+`~/.copilot/hooks/grounded-review-audit.json` erstellen:
 
 ```json
 {
@@ -194,8 +192,8 @@ Jedes Problem kennzeichnen als: [BLOCKER] muss behoben werden | [WARNING] sollte
     "postToolUse": [
       {
         "type": "command",
-        "bash": "echo \"[AUDIT $(date)] Tool verwendet\" >> ~/.copilot/abap-audit.log",
-        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\abap-audit.log\" -Value \"[AUDIT $(Get-Date)] Tool verwendet\"",
+        "bash": "echo \"[AUDIT $(date)] Tool verwendet\" >> ~/.copilot/grounded-review.log",
+        "powershell": "Add-Content -Path \"$env:USERPROFILE\\.copilot\\grounded-review.log\" -Value \"[AUDIT $(Get-Date)] Tool verwendet\"",
         "timeoutSec": 5
       }
     ]
@@ -203,21 +201,31 @@ Jedes Problem kennzeichnen als: [BLOCKER] muss behoben werden | [WARNING] sollte
 }
 ```
 
-**Schritt 3 — anwenden.** Copilot neu starten, dann in einem neuen Chat
-5–10 Zeilen beliebigen ABAP-Codes einfügen und fragen:
+**Schritt 3 — anwenden.** Copilot neu starten, dann den zur Rolle passenden
+Prompt wählen:
 
-```
-Prüfe diesen ABAP-Ausschnitt.
-```
+- **HCM-nahe Übung:**
+  ```
+  Entwirf nur mit diesem eingefügten Richtlinien-Auszug eine Antwort an eine
+  Führungskraft und zitiere die genutzte Zeile.
+  ```
+- **Entwickler-nahe Übung:**
+  ```
+  Prüfe diesen eingefügten Diff nur mit dem, was hier steht, und nenne einen
+  Test oder manuellen Check, den ich vor dem Merge ausführen sollte.
+  ```
 
-**Warten.** Der Skill lädt automatisch, wendet die Checkliste an, und jeder
-Tool-Aufruf ergänzt eine Zeile in `~/.copilot/abap-audit.log` (prüfen mit
-`!Get-Content $env:USERPROFILE\.copilot\abap-audit.log`). Hat die Checkliste
-etwas entdeckt? [GITHUB-COPILOT-DOCS]
+**Warten.** Der Skill lädt automatisch, erzwingt Grounding, und jeder Tool-Aufruf
+ergänzt eine Zeile in `~/.copilot/grounded-review.log` (prüfen mit
+`!cat ~/.copilot/grounded-review.log` oder
+`!Get-Content $env:USERPROFILE\.copilot\grounded-review.log`). Hat er neben der
+Antwort auch einen Verifikationsschritt genannt? [GITHUB-COPILOT-DOCS]
 
-Nachbesprechung: die Schleife hat jetzt **automatisches Feedback bei jedem
-Schritt** — das ist der agentische Entwicklungszyklus mit eingebauten
-Guardrails. [ANTHROPIC-AGENTS]
+Nachbesprechung: Das ist das wiederverwendbare Muster aus dem ganzen Training im
+Kleinen — das Modell in echtem Text erden, eine automatische Audit-Spur
+hinzufügen und ein menschliches Verifikations-Tor explizit lassen. Für
+Entwickler:innen ist das zugleich der agentische Entwicklungszyklus in einer
+Schleife. [ANTHROPIC-AGENTS]
 
 ---
 

@@ -198,12 +198,13 @@ system: build an *eval set* (input → expected output), run *adversarial probes
 break it — prompt injection, goal hijacking, unexpected tool calls). [DEEPMIND-SAFETY]
 *Why:* "feels right in the demo" is not a safety argument for an autonomous system.
 
-**31. AI in the SAP ecosystem.** Joule (SAP's embedded assistant across
+**31. Optional audience context — AI in the SAP ecosystem.** Joule (SAP's embedded assistant across
 SuccessFactors, S/4HANA and SAP Build), SAP Build (low-code automation with GenAI
 actions), BTP AI Core + GenAI Hub (deploy and proxy models enterprise-grade with
 SAP-scoped data processing). *Why:* where your daily SAP tools are heading in the
 next 12–18 months — you will encounter these whether you build or configure.
-*(General product knowledge; no release dates or roadmap claims.)*
+This is **context for where the general AI patterns above show up**, not a SAP
+product lesson. *(General product knowledge; no release dates or roadmap claims.)*
 
 **32. Agentic cost & context management.** LLM calls cost money and time; long
 context windows cost proportionally more. Practical patterns: keep prompts lean
@@ -344,8 +345,9 @@ Ask the model directly:
 
 Probes the learner runs to see the seams:
 - **Ask the same question twice** — different wording proves non-determinism.
-- **Ask about something that doesn't exist** (a made-up SAP transaction, a fake
-  API) — provoke a hallucination on purpose, then discuss why it happened.
+- **Ask about something that doesn't exist** (a made-up policy ID, a fake API, a
+  fake SAP transaction) — provoke a hallucination on purpose, then discuss why it
+  happened.
   [DEEPMIND-SAFETY]
 - **Give it a document, then ask something not in it** — see if it admits "not in
   the text" or invents. Teaches grounding vs. guessing.
@@ -360,6 +362,7 @@ one-liner: **treat output as a draft to verify, and it becomes a great tool.**
 
 ---
 
+## Adapting on the fly
 
 - **Beginner:** analogy before the term; one tiny hands-on exercise per topic;
   celebrate the "aha."

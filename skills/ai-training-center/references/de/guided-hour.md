@@ -7,7 +7,7 @@ du nichts erneut nachlesen.
 
 ---
 
-# Modul 1 — Kaltstart + Prompting, das funktioniert  (~18 Min)
+# Modul 1 — Kaltstart + Prompting, das funktioniert  (~15 Min)
 
 Ziel: Die lernende Person spürt die Lücke zwischen einer vagen Anfrage und einer
 guten und geht mit einem wiederverwendbaren Prompting-Muster für echte
@@ -15,12 +15,12 @@ SAP-Arbeit.
 
 Quelle: [GOOGLE-PROMPTING] (siehe SOURCES.md).
 
-## Teil A — Kaltstart (5 Min): tun, nicht davon hören
+## Teil A — Kaltstart (4 Min): tun, nicht davon hören
 
 Rahmen (1 Zug): „Bevor wir Theorie machen — lass uns das Ding einfach benutzen.
-Nimm eine kleine, echte Aufgabe aus deiner Arbeitswoche: eine Richtlinienfrage,
-ein Stück Customizing zum Erklären, ein Snippet zum Schreiben, eine E-Mail an
-eine:n Stakeholder:in."
+Nimm eine kleine, echte Aufgabe aus deiner Arbeitswoche. Wenn du im HCM bist,
+denk an eine Richtlinien-Erklärung oder eine Antwort an eine Führungskraft.
+Wenn du entwickelst, denk an ein Snippet-Review oder eine kleine Code-Änderung."
 
 Übung 1 — die vage Anfrage. Sie fügen in ihr eigenes KI-Werkzeug ein:
 ```
@@ -32,7 +32,7 @@ Nachbesprechung: die meisten bekommen ein generisches 5/10. Genau diese Lücke
 ist das ganze Training. Das Modell ist nicht dumm — es rät bei allem, was du
 nicht gesagt hast.
 
-## Teil B — Prompting, das funktioniert (10 Min)
+## Teil B — Prompting, das funktioniert (8 Min)
 
 Rahmen (1–2 Züge): Ein Prompt ist einfach eine **Anweisung**. Das Modell kann
 weder deine Gedanken lesen noch dein SAP-System sehen. [GOOGLE-PROMPTING] nennt
@@ -70,7 +70,7 @@ Vorlage — sag ihnen, sie sollen sie behalten.
 Zeit-Hinweis: bleib nicht bei einer Neu-Anfrage — Teil C macht daraus eine
 Gewohnheit.
 
-## Teil C — Iterieren statt neu anfangen (5 Min)
+## Teil C — Iterieren statt neu anfangen (3 Min)
 
 Rahmen (1 Zug): Du triffst es selten im ersten Versuch — und musst du auch nicht.
 Prompting ist ein Gespräch: behalte die gute Antwort und steuere sie mit **einer**
@@ -97,7 +97,7 @@ laufen zu lassen.
 
 ---
 
-# Modul 2 — Warum es manchmal lügt  (~13 Min)
+# Modul 2 — Warum es manchmal lügt  (~10 Min)
 
 Ziel: Die lernende Person kann vorhersagen, *wann* KI unzuverlässig ist, und hat
 eine Gewohnheit, um es zu erkennen. Dieses Modul bewahrt SAP-Profis vor Ärger.
@@ -116,20 +116,22 @@ Schleife handeln, können sich kleine Fehler Schritt für Schritt **aufsummieren
 
 Übung 1 — eine Halluzination provozieren. Sie fragen ihr eigenes Werkzeug etwas
 Präzises und Überprüfbares aus ihrer Welt, wo Erfindung wahrscheinlich ist:
-```
-Wie lautet die exakte SAP-OSS-Hinweisnummer und der Titel, die [einen konkreten
-Nischenfehler, den sie kennen] beheben, und zitiere die erste Zeile des Hinweises?
-```
-oder (Entwicklung):
-```
-Gib mir die exakte Signatur von [ein obskurer oder erfundener SAP-BAPI /
-eine Klassenmethode], inklusive aller Parameter.
-```
-**Warten.** Frag: „Glaubst du es? Kannst du es gegen das echte System prüfen?"
+- **HCM-Beispiel:**
+  ```
+  Welcher exakte Satz in unserer [Urlaubs-/Benefits-/Payroll-]Richtlinie sagt
+  [eine sehr konkrete Regel], und zitiere ihn wortwörtlich?
+  ```
+- **Entwickler-Beispiel:**
+  ```
+  Gib mir die exakte Signatur von [ein obskurer oder erfundener SAP-BAPI /
+  eine Klassenmethode], inklusive aller Parameter.
+  ```
+**Warten.** Frag: „Glaubst du es? Kannst du es gegen die echte Quelle oder das
+echte System prüfen?"
 
-Nachbesprechung: oft erfindet es eine plausible Hinweisnummer / Signatur. Die
-Gefahr ist nicht, dass es falsch ist — sondern dass es *selbstbewusst und im
-richtigen Format* falsch ist.
+Nachbesprechung: oft erfindet es einen plausiblen Richtlinien-Satz / eine
+Hinweisnummer / Signatur. Die Gefahr ist nicht, dass es falsch ist — sondern
+dass es *selbstbewusst und im richtigen Format* falsch ist.
 
 Übung 2 — die Nicht-Determiniertheit sehen. Derselbe Prompt, 2–3 Mal ausgeführt
 (jedes Mal ein neuer Chat):
@@ -147,8 +149,8 @@ diesmal die echte Quelle mit und erzwing ein Zitat (neuer Chat):
 Beantworte [dieselbe Frage] NUR mit dem Text unten. Zitiere die exakte Zeile, die
 du genutzt hast; steht die Antwort nicht im Text, sag „nicht in der Quelle".
 ---
-[echten OSS-Hinweis / echte Methodensignatur aus dem System / echten
-Richtlinien-Absatz einfügen]
+[echten Richtlinien-Absatz / echte Methodensignatur aus dem System / echten
+Fehlertext aus dem System einfügen]
 ```
 **Warten.** Frag: ist die Antwort jetzt überprüfbar? Woher kam vorher die
 Selbstsicherheit?
@@ -160,8 +162,9 @@ einfügen kannst.
 
 ## Die Vertrauens-Checkliste (gib ihnen diese — sie ist ihre Leitplanke)
 Bevor du auf eine KI-Antwort hin handelst:
-1. **Ist es prüfbar?** Verifiziere Fakten, Zahlen, Hinweis-IDs, Signaturen gegen
-   das echte System / die Doku — versende nie ein ungeprüftes Detail.
+1. **Ist es prüfbar?** Verifiziere Fakten, zitierte Richtlinien-Sätze,
+   Hinweis-IDs, Signaturen gegen die echte Quelle / das echte System / die Doku
+   — versende nie ein ungeprüftes Detail.
 2. **Habe ich die Quelle mitgegeben?** In deinem Text verankerte Antworten
    schlagen Antworten aus dem Gedächtnis. Füge die Richtlinie / Spezifikation
    ein; bitte es, daraus zu zitieren.
@@ -172,13 +175,14 @@ Bevor du auf eine KI-Antwort hin handelst:
    verwerfen.
 
 ### Prüfung
-Falls die provozierte Antwort zufällig korrekt war, wisch es nicht weg — lass sie
-trotzdem gegen das echte System prüfen. Die Lektion ist die *Gewohnheit des
-Prüfens*, nicht dass das Modell dieses eine Mal versagt hat.
+Falls die provozierte Antwort zufällig korrekt war, wisch es nicht weg — lass
+sie trotzdem gegen die echte Quelle / das echte System prüfen. Die Lektion ist
+die *Gewohnheit des Prüfens*, nicht dass das Modell dieses eine Mal versagt
+hat.
 
 ---
 
-# Modul 3 — Chatbot → Agent  (~13 Min)
+# Modul 3 — Chatbot → Agent  (~10 Min)
 
 Ziel: Sie verstehen, was aus einem Chat-Assistenten einen *Agenten* macht, damit
 das Wort „Agent" aufhört, Magie zu sein, und zu einer Checkliste wird, über die
@@ -205,11 +209,19 @@ Gedächtnis · Schleife · Leitplanken.**
 Übung — bring ihr Werkzeug zum *Handeln*, nicht nur zum Antworten. Sie nutzen den
 Agenten-/Werkzeug-Modus ihres Werkzeugs (Copilot-Agentenmodus, Joule usw.) an
 einer kleinen, mehrstufigen Aufgabe:
-```
-Ziel: Finde in diesem Projekt jede Datei, die „[einen Begriff]" erwähnt,
-fasse zusammen, was jede tut, und schlage eine konkrete Verbesserung vor.
-Zeig mir zuerst deinen Plan, dann führe ihn Schritt für Schritt aus.
-```
+- **HCM-Variante:**
+  ```
+  Ziel: Finde in diesem Ordner oder in den eingefügten Richtlinien-/Prozessnotizen
+  jede Erwähnung von „[einem Begriff]", fasse zusammen, was dort steht, und nenne
+  eine Unklarheit, die man klären sollte. Zeig mir zuerst deinen Plan, dann führe
+  ihn Schritt für Schritt aus.
+  ```
+- **Entwickler-Variante:**
+  ```
+  Ziel: Finde in diesem Projekt jede Datei, die „[einen Begriff]" erwähnt,
+  fasse zusammen, was jede tut, und schlage eine konkrete Verbesserung vor.
+  Zeig mir zuerst deinen Plan, dann führe ihn Schritt für Schritt aus.
+  ```
 **Warten.** Frag: „Wo hat es geplant? Wo hat es ein Werkzeug genutzt und ein
 echtes Ergebnis gelesen? Wo hätte es anhalten und dich fragen sollen?"
 
@@ -221,8 +233,8 @@ Checkpoint**.
 Übung 2 — den Checkpoint halten. Jetzt übst du den menschlichen Checkpoint
 bewusst. Im selben Agenten-Chat:
 ```
-Bevor du etwas änderst, zeig mir NUR deinen Plan als nummerierte Liste — welche
-Dateien du anfassen würdest und warum. Führe noch nichts aus.
+Bevor du handelst, zeig mir NUR deinen Plan als nummerierte Liste — welche
+Dateien oder Dokumente du ansehen würdest und warum. Führe noch nichts aus.
 ```
 Lies den Plan, antworte mit **einer** Korrektur oder Einschränkung (z. B. „fass
 die Testdateien nicht an", „behandle auch den Leer-Eingabe-Fall"), dann lass ihn
@@ -240,8 +252,8 @@ autonomer.
 
 ## Optionale Vorführung durch Moderator:in — echte Agenten-Anatomie mit Agent0 (2–3 Min)
 
-Wenn ein:e Moderator:in dieses Repo eingerichtet hat, zeig das Skelett eines
-echten Agenten. Vom Repo-Stammverzeichnis:
+Wenn ein:e Moderator:in dieses Repo eingerichtet hat **und noch Zeit übrig
+ist**, zeig das Skelett eines echten Agenten. Vom Repo-Stammverzeichnis:
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -271,7 +283,7 @@ Agenten-/Werkzeug-Modus einschalten und neu laufen, bevor du nachbesprichst.
 
 ---
 
-# Modul 4 — Folgen abschätzen  (~13 Min)
+# Modul 4 — Folgen abschätzen  (~10 Min)
 
 Ziel: Sie gehen mit einer persönlichen, ehrlichen Landkarte dessen, was KI in
 *ihrer* Woche verändert — kein generisches „KI verändert alles". Das ist das
@@ -338,7 +350,7 @@ verantworten?", um die Nuance sichtbar zu machen.
 
 ---
 
-# Zweig — HCM-Spur  (~14 Min)
+# Zweig — HCM-Spur  (~10 Min)
 
 Für SAP-HCM-Consultants. Ziel: alles auf HR-Arbeit anwenden und das eine Risiko
 spüren, das in ihrer Welt am meisten zählt — **Datenschutz** — plus, wie sich die
@@ -351,12 +363,12 @@ KI ist hier echt nützlich — Richtlinien erklären, Stellenbeschreibungen,
 Customizing-Anleitungen, Erst-Antworten auf Mitarbeiterfragen entwerfen —
 *sofern* du die Daten und die Verifikation richtig handhabst.
 
-## Übung 1 — eine echte HCM-Unterstützung (4 Min)
+## Übung 1 — eine echte HCM-Unterstützung (3 Min)
 Sie führen in ihrem eigenen Werkzeug aus, mit dem Muster aus Modul 1:
 ```
 Rolle: Du bist ein:e erfahrene:r SAP-SuccessFactors-/HCM-Consultant.
 Aufgabe: Erkläre einer Führungskraft in einfacher Sprache, wie [ein echtes
-HR-Richtlinien- oder Customizing-Thema, das sie betreuen] funktioniert, und
+HR-Richtlinien- oder Systemregel-Thema, das sie betreuen] funktioniert, und
 liste die 3 Schritte, die sie unternehmen muss.
 Kontext: [den relevanten Richtlinientext oder Customizing-Hinweis einfügen].
 Einschränkungen: Nutze nur die eingefügte Richtlinie; wenn etwas nicht abgedeckt
@@ -366,7 +378,7 @@ Format: Eine kurze Einleitung + eine nummerierte 3-Schritt-Checkliste.
 **Warten.** Nachbesprechung: es blieb geerdet, weil sie die Quelle eingefügt und
 das Raten verboten haben — die Vertrauens-Gewohnheit aus Modul 2, angewendet.
 
-## Übung 2 — die Datenschutz-Falle erkennen (4 Min)
+## Übung 2 — die Datenschutz-Falle erkennen (3 Min)
 Das ist der Kern der HCM-Spur. Bitte sie, sich diesen verlockenden Prompt
 anzusehen — **NICHT ausführen** — und zu sagen, was falsch ist:
 ```
@@ -398,7 +410,7 @@ Ada leitet eine kurze Reflexion:
   verantworten. KI hat nichts davon.
 - Ein konkreter Gewinn, den sie diese Woche übernehmen können (fließt in Modul 6).
 
-## Übung 3 — eigene HCM-Vorlage bauen (4 Min)
+## Übung 3 — eigene HCM-Vorlage bauen (2 Min)
 
 Nimm den strukturierten Prompt aus Übung 1 und reduziere ihn auf eine leere
 Vorlage, die für *jede* HCM-Frage funktioniert:
@@ -433,7 +445,7 @@ in ein nicht freigegebenes Werkzeug die Falle ist.
 
 ---
 
-# Zweig — Entwickler-Spur  (~15 Min)
+# Zweig — Entwickler-Spur  (~10 Min)
 
 Für SAP-Entwickler:innen. Ziel: KI auf den Software-Lebenszyklus abbilden, damit
 sie den **agentischen Entwicklungszyklus** sehen — was sich ändert und was die
@@ -449,7 +461,7 @@ und Tests arbeiten und an menschlichen Checkpoints anhalten. Der Zyklus wird
 **agentisch**: du setzt Absicht und Einschränkungen, der Agent entwirft über die
 Stufen hinweg, und **du prüfst, verifizierst und verantwortest den Merge.**
 
-## Übung 1 — ein agentischer Coding-Durchlauf (5 Min)
+## Übung 1 — ein agentischer Coding-Durchlauf (3 Min)
 Im Agenten-/Werkzeug-Modus ihres Werkzeugs, an einer kleinen echten (oder
 Beispiel-)Aufgabe:
 ```
@@ -470,7 +482,7 @@ irgendetwas außerhalb von [dem vorgesehenen Bereich] änderst.
 - **Checkpoint** → „halte an und frag, bevor du X anfasst" = die Leitplanke, die
   [ANTHROPIC-AGENTS] gegen aufsummierte Fehler fordert.
 
-## Übung 2 — finde, wo es falsch ist (3 Min)
+## Übung 2 — finde, wo es falsch ist (2 Min)
 Sie prüfen den eigenen Output des Agenten kritisch:
 ```
 Prüfe den Code, den du gerade geschrieben hast. Was könnte subtil falsch,
@@ -497,7 +509,7 @@ auf höherem Niveau arbeiten (orchestrieren + reviewen) — während er Urteil u
 Verifikation zentraler macht, nicht weniger. Speise einen konkreten
 Übernahme-Punkt in Modul 6 ein.
 
-## Übung 3 — Prompt-Injection-Risiko erkennen (5 Min)
+## Übung 3 — Prompt-Injection-Risiko erkennen (3 Min)
 
 Für Entwickler:innen, die agentische Workflows bauen, ist Prompt Injection die
 wichtigste neue Angriffsfläche. [ANTHROPIC-AGENTS] Schau dir diesen manipulierten
@@ -540,7 +552,7 @@ Checkpoint halten, nicht der Agent.
 
 ---
 
-# Modul 6 — Montags-Mitnehmer  (~10 Min)
+# Modul 6 — Montags-Mitnehmer  (~5 Min)
 
 Ziel: sie gehen mit einem **schriftlichen, einsatzbereiten Prompt** und einer
 **benannten Verifikations-Gewohnheit** raus — kein gutes Vorsatz, sondern ein
@@ -553,7 +565,7 @@ Rahmen (1 Zug): „Du hast die Grundlagen, die Unzuverlässigkeit, Agenten und d
 Folgen für deine Arbeit gesehen. Jetzt machen wir daraus etwas, das du morgen
 früh um 9 Uhr nutzen kannst."
 
-## Übung 1 — den morgigen Prompt schreiben  (4 Min)
+## Übung 1 — den morgigen Prompt schreiben  (2 Min)
 
 Frage: *„Was ist eine echte Aufgabe, die du diese Woche mit KI ausprobieren
 wirst?"*
@@ -581,7 +593,7 @@ Konkrete Beispiel-Füllungen, die Ada anbieten kann, wenn sie leer sind:
 Nachbesprechung: der fertige Prompt ist ihr Ergebnis — greifbar, kopierbar, morgen
 einsatzbereit. Alles andere aus der Stunde ist Kontext; das hier ist der Mitnehmer.
 
-## Übung 2 — das Verifikations-Tor benennen  (3 Min)
+## Übung 2 — das Verifikations-Tor benennen  (1 Min)
 
 Frage: *„Für diese Aufgabe — was wäre eine konkrete Sache, die du prüfen würdest,
 bevor du auf die KI-Antwort reagierst?"* Auf Konkretheit bestehen; nicht „Ich
@@ -594,7 +606,7 @@ würde es prüfen", sondern etwas wie:
 die sie aus der Klemme hält. Das ist die Vertrauens-Checkliste aus Modul 2 auf
 *ihre* konkrete Aufgabe angewendet.
 
-## Abschluss  (3 Min)
+## Abschluss  (2 Min)
 
 Die Drei-Punkte-Mitnehmer zurückgeben — laut aussprechen oder eintippen, damit
 sie es klar hören:

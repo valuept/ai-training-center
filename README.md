@@ -1,9 +1,10 @@
 # AI Training Center
 
 A **one-hour, hands-on AI-agent literacy training** for SAP HCM consultants and
-SAP developers, packaged as a **custom agent for GitHub Copilot desktop**. You
-install the folder once, then start a chat session and pick the agent — no
-terminal, no setup.
+SAP developers, packaged as a **custom agent for GitHub Copilot desktop**. It
+teaches AI concepts **using SAP-flavoured examples**; it is **not** a SAP
+configuration or ABAP course. You install the folder once, then start a chat
+session and pick the agent — no terminal, no setup.
 
 A facilitator agent — **Ada** — runs the session: it presents a
 concept in a couple of sentences, gives you an exercise to run in **your own AI
