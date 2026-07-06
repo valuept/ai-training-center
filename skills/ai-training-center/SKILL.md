@@ -36,19 +36,19 @@ Shared hour, with a short role-specific branch near the end.
 
 ## The hour
 
-| # | Module | Min | Concept | Reference |
-|---|--------|-----|---------|-----------|
-| 1 | Cold open + Prompting that works | 15 | a prompt is an instruction; specificity, context, examples | `references/module-1-prompting.md` |
-| 2 | Why it sometimes lies | 10 | hallucination, non-determinism, verification | `references/module-2-reliability.md` |
-| 3 | Chatbot → Agent | 10 | augmented LLM, tools, memory, the loop, guardrails | `references/module-3-agents.md` |
-| 4 | Foreseeing consequences | 10 | augmentation vs replacement, human-in-the-loop | `references/module-4-consequences.md` |
-| 5 | Branch (HCM or Dev) | 10 | role-specific application | `references/branch-hcm.md` / `references/branch-dev.md` |
-| 6 | Monday takeaway | 5 | one prompt/workflow to use tomorrow | (in `agents/ai-trainer.md`) |
+| # | Module | Min | Concept |
+|---|--------|-----|---------|
+| 1 | Cold open + Prompting that works | 18 | a prompt is an instruction; specificity, context, examples |
+| 2 | Why it sometimes lies | 13 | hallucination, non-determinism, verification |
+| 3 | Chatbot → Agent | 13 | augmented LLM, tools, memory, the loop, guardrails |
+| 4 | Foreseeing consequences | 13 | augmentation vs replacement, human-in-the-loop |
+| 5 | Branch (HCM or Dev) | 14–15 | role-specific application |
+| 6 | Monday takeaway | 10 | one prompt/workflow to use tomorrow |
 
-## How the facilitator runs a module
-Frame (1–2 turns, cite source) → give the copy-pasteable exercise → **stop and
-wait** → debrief against what they saw → keep to the minute budget. Full agent
-behavior is in `agents/ai-trainer.md`.
+All six live in one file: `references/guided-hour.md` (German:
+`references/de/guided-hour.md`). The facilitator reads it once per session,
+not once per module — see `agents/ai-trainer.md` for the full facilitation
+loop (turn rhythm, role handling, timing).
 
 ## Two session types
 At the start `@ai-trainer` asks language, then offers:
@@ -66,15 +66,18 @@ At the start `@ai-trainer` asks language, then offers:
 
 ## Optional live demo (presenter-led)
 For module 3, a presenter can run the real `agent0` CLI in this repo to show
-agent anatomy (plan → execute → policy → memory) on actual code. See
-`references/module-3-agents.md` for the exact commands. Skippable for a purely
-self-run session.
+agent anatomy (plan → execute → policy → memory) on actual code. See the
+Module 3 section of `references/guided-hour.md` for the exact commands.
+Skippable for a purely self-run session.
 
 ## Files
-- `agents/ai-trainer.md` — the facilitator agent (persona + loop + Monday close)
-- `references/module-1-prompting.md` … `module-4-consequences.md` — shared blocks
-- `references/branch-hcm.md`, `references/branch-dev.md` — the two tracks
+- `agents/ai-trainer.md` — the facilitator agent (persona, turn rhythm, full loop)
+- `references/guided-hour.md` — all 6 modules + both branches, one file (session type A)
 - `references/topics-ai.md` — adaptive AI-topics catalog (session type B)
 - `references/copilot-power-tools.md` — slash commands + how to build skills & hooks (optional add-on)
-- `references/de/` — German module + topics files (`themen-ki.md`, `copilot-power-tools.md`)
+- `references/de/` — German equivalents (`guided-hour.md`, `themen-ki.md`, `copilot-power-tools.md`)
 - `references/SOURCES.md` — cited vendor-neutral sources
+
+Reference files are read silently by the agent — a session touches at most
+two of them (the guided hour or the topics catalog, plus optionally the power
+tools file), which keeps file-access prompts to a minimum.

@@ -79,8 +79,8 @@ German module content lives under `skills/ai-training-center/references/de/`.
 ## Optional live demo (presenter-led)
 
 Module 3 can show real agent anatomy using the `agent0` CLI in this repo
-(plan → execute → policy → memory). Commands are in
-`skills/ai-training-center/references/module-3-agents.md`. Fully skippable — the
+(plan → execute → policy → memory). Commands are in the Module 3 section of
+`skills/ai-training-center/references/guided-hour.md`. Fully skippable — the
 hands-on exercise teaches the concept without it.
 
 ## Layout
@@ -96,9 +96,13 @@ ai-training-center/
     SKILL.md                               # curriculum spine + rules
     references/
       SOURCES.md                           # cited vendor-neutral sources (shared)
-      module-1-prompting.md … branch-dev.md   # English modules
-      de/                                  # German modules (same 6 files)
-        module-1-prompting.md … branch-dev.md
+      guided-hour.md                       # all 6 modules + both branches, one file
+      topics-ai.md                         # adaptive AI-topics catalog
+      copilot-power-tools.md               # optional slash commands / skills / hooks add-on
+      de/                                  # German equivalents
+        guided-hour.md
+        themen-ki.md
+        copilot-power-tools.md
 ```
 
 ## Principles

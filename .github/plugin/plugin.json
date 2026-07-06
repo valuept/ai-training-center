@@ -1,7 +1,7 @@
 {
   "name": "ai-training-center",
   "description": "A one-hour, hands-on AI-agent literacy training for SAP HCM consultants and SAP developers. The @ai-trainer agent facilitates: short concept, live exercise in your own Copilot/Joule, debrief, then an HCM or Developer track. Grounded in vendor-neutral primary sources.",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "keywords": [
     "training",
     "ai-literacy",
