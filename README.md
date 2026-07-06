@@ -43,9 +43,14 @@ inside the app — no cloning, no copying folders.
 3. **Start a new chat** and select **@ai-trainer** from the agent picker.
 4. Open a **second window** with any AI tool you can type into (Copilot in
    another file, SAP Joule, ChatGPT).
-5. Type `start`. Ada first asks **English or Deutsch**, then confirms your role
-   (HCM consultant or developer) and runs the hour. Say "skip", "go deeper",
-   or "pause" any time.
+5. Type `start`. Ada first asks **English or Deutsch**, then which **session
+   type** you want:
+   - **A — Guided hour**: the SAP-tailored ~60-minute curriculum above (HCM or
+     developer branch).
+   - **B — AI topics at your level**: Ada checks your AI knowledge level and
+     teaches AI concepts from fundamentals to advanced — **agents first**, plus
+     the core vocabulary and hands-on "how does it know that?" trust questions.
+   Say "skip", "go deeper", or "pause" any time.
 
 > One agent, both languages: **@ai-trainer** asks the learner which language to
 > use on the very first message, then runs the whole session in that language.

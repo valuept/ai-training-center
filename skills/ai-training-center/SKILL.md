@@ -1,6 +1,6 @@
 ---
 name: ai-training-center
-description: 'One-hour hands-on AI-agent literacy training for SAP HCM consultants and SAP developers. Use when someone wants to learn AI/agent fundamentals (prompting, reliability, agents, agentic SDLC) and foresee AI''s impact on their SAP work. Provides the curriculum spine, facilitation rules, per-module talking points, exercises, and cited vendor-neutral sources for the @ai-trainer agent.'
+description: 'Hands-on AI-agent literacy training for SAP HCM consultants and SAP developers. Use when someone wants to learn AI/agent fundamentals (prompting, reliability, agents, agentic SDLC) and foresee AI''s impact on their SAP work. Offers a guided ~1-hour SAP-tailored hour, or an adaptive AI-topics track that assesses the learner''s level and teaches AI concepts from fundamentals to advanced (agents-first, with vocabulary and trust-building). Provides the curriculum spine, facilitation rules, per-module talking points, exercises, and cited vendor-neutral sources for the @ai-trainer agent.'
 ---
 
 # AI Training Center
@@ -49,6 +49,16 @@ Frame (1–2 turns, cite source) → give the copy-pasteable exercise → **stop
 wait** → debrief against what they saw → keep to the minute budget. Full agent
 behavior is in `agents/ai-trainer.md`.
 
+## Two session types
+At the start `@ai-trainer` asks language, then offers:
+- **A — Guided hour** (the table above): SAP-tailored, HCM/Dev branch.
+- **B — Adaptive AI-topics track**: profession-independent. Places the learner's
+  level (beginner / intermediate / advanced), then teaches AI topics from
+  fundamentals to advanced, **agents-first**, weaving in a **core vocabulary**
+  (agent, agent loop, harness, ground truth, tool use…) and **"how does it know
+  that?" trust questions**. Catalog: `references/topics-ai.md`
+  (German: `references/de/themen-ki.md`).
+
 ## Optional live demo (presenter-led)
 For module 3, a presenter can run the real `agent0` CLI in this repo to show
 agent anatomy (plan → execute → policy → memory) on actual code. See
@@ -59,4 +69,6 @@ self-run session.
 - `agents/ai-trainer.md` — the facilitator agent (persona + loop + Monday close)
 - `references/module-1-prompting.md` … `module-4-consequences.md` — shared blocks
 - `references/branch-hcm.md`, `references/branch-dev.md` — the two tracks
+- `references/topics-ai.md` — adaptive AI-topics catalog (session type B)
+- `references/de/` — German module + topics files (`themen-ki.md`)
 - `references/SOURCES.md` — cited vendor-neutral sources
