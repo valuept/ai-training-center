@@ -55,26 +55,19 @@ inside the app — no cloning, no copying folders.
 > One agent, both languages: **@ai-trainer** asks the learner which language to
 > use on the very first message, then runs the whole session in that language.
 
-### Stay current automatically (recommended)
+### Stay current
 
-The installed plugin is a **cached copy**, so new versions normally need a manual
-refresh. To make it **auto-update** — every Copilot session pulls the newest
-training on its own — run the one-time setup once:
+The installed plugin is a **cached copy**, so new versions need a refresh. No
+script, no git, no admin rights, no PowerShell — just the built-in CLI command,
+before you start a session:
 
-**Windows (PowerShell):**
-```powershell
-irm https://raw.githubusercontent.com/valuept/ai-training-center/master/install/setup.ps1 | iex
 ```
-**macOS / Linux:**
-```bash
-curl -fsSL https://raw.githubusercontent.com/valuept/ai-training-center/master/install/setup.sh | bash
+copilot plugin update ai-training-center
 ```
 
-This clones the repo to `~/.copilot/ai-training-center-src` and installs a
-`sessionStart` hook that runs `git pull` + refreshes the plugin cache at every
-launch. Restart Copilot once after setup. From then on there's **nothing to
-refresh** — just run `@ai-trainer`. (Requires `git`; the hook fails silently when
-you're offline, so it never blocks a session.)
+(Or `copilot plugin update --all` to refresh every installed plugin at once.)
+Run it any time — it's quick, safe to run repeatedly, and needs nothing beyond
+Copilot CLI itself.
 
 ## Languages / Sprachen
 
@@ -106,9 +99,6 @@ ai-training-center/
       module-1-prompting.md … branch-dev.md   # English modules
       de/                                  # German modules (same 6 files)
         module-1-prompting.md … branch-dev.md
-  install/                                 # one-time auto-update setup + sync hook
-    setup.ps1  setup.sh                    # run once per machine
-    sync.ps1   sync.sh                     # git pull + cache refresh (hook target)
 ```
 
 ## Principles
