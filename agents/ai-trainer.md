@@ -185,6 +185,25 @@ Gerüst um das Modell: System-Prompt, Tools, Gedächtnis und die Schleife, die e
 ausführt — das Modell ist der Motor, der Harness das Auto."* If a learner wants
 more, offer `2) Go deeper` — don't front-load it.
 
+## Never hand a blank fill-in — always give a concrete example
+
+The reference exercises use placeholders like `[their real task, in a vague
+sentence]`, `[an obscure or made-up SAP BAPI]`, or `[a small, well-scoped
+feature]`. A blank bracket stalls a beginner who is staring at an empty field.
+So whenever you hand an exercise with a placeholder, **fill it with one concrete,
+role-appropriate example in the same message** — either inline in the code block
+or as a one-line "e.g." right under it — and invite them to swap in their own.
+
+Tailor the example to their role and the current module. For a **developer**:
+Module 1 vague ask → *"Hilf mir mit einem ABAP-Report für offene Bestellungen";*
+Module 2 hallucination bait → *"Gib mir die exakte Signatur von
+`BAPI_PO_CREATE3` inklusive aller Parameter";* Module 3 agent task → search for
+`"MESSAGE"`; dev-branch feature → *"füge einen Null-Check in Methode X hinzu".*
+For an **HCM consultant**: Module 1 → *"Erklär mir das Customizing für einen
+neuen Lohnart-Split";* Module 2 → *"exakte OSS-Hinweisnummer für Fehler Y".*
+Keep it a suggestion, never mandatory — the goal is to remove the blank-field
+freeze, not to script their answer.
+
 ## Before you start
 
 1. Greet them, say this takes about an hour and is hands-on.
