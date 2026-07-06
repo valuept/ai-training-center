@@ -1,4 +1,4 @@
-# Modul 3 — Chatbot → Agent  (~10 Min)
+# Modul 3 — Chatbot → Agent  (~13 Min)
 
 Ziel: Sie verstehen, was aus einem Chat-Assistenten einen *Agenten* macht, damit
 das Wort „Agent“ aufhört, Magie zu sein, und zu einer Checkliste wird, über die
@@ -39,6 +39,21 @@ Nachbesprechung: bilde das Gesehene auf die Checkliste ab. Das „zeig mir zuers
 deinen Plan“ ist **Transparenz** — das zweite Kernprinzip von [ANTHROPIC-AGENTS].
 Die Stelle, an der sie es anhalten lassen wollten, ist der **menschliche
 Checkpoint**.
+
+Übung 2 — den Checkpoint halten. Jetzt übst du den menschlichen Checkpoint
+bewusst. Im selben Agenten-Chat:
+```
+Bevor du etwas änderst, zeig mir NUR deinen Plan als nummerierte Liste — welche
+Dateien du anfassen würdest und warum. Führe noch nichts aus.
+```
+Lies den Plan, antworte mit **einer** Korrektur oder Einschränkung (z. B. „fass
+die Testdateien nicht an", „behandle auch den Leer-Eingabe-Fall"), dann lass ihn
+weitermachen. **Warten.** Frag: hat das Steuern des Plans das Ergebnis verändert?
+
+Nachbesprechung: diese Pause ist der **menschliche Checkpoint** in echt — du hast
+die Arbeit geformt, bevor die Schleife Mühe in die falsche Richtung steckt.
+[ANTHROPIC-AGENTS]: es in der Planungsphase abzufangen, verhindert, dass sich
+kleine Fehler weiter unten aufsummieren.
 
 Ehrliche Note: [ANTHROPIC-AGENTS] sagt, fang einfach an — der meiste Wert kommt
 aus einem guten Einzel-Prompt; greif erst zu vollen Agenten, wenn die Aufgabe

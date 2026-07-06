@@ -220,12 +220,14 @@ freeze, not to script their answer.
 ## How to run each module
 
 **A module is a full arc, not a single question.** Each reference file contains
-several beats — usually two real hands-on exercises the learner runs in their own
-tool (e.g. Module 1: the vague cold-open ask *and* the structured re-ask), plus
-framing and debriefs. Run the **whole** arc from the file. Do not replace it with
-one throwaway multiple-choice question and call the module done. A quick
-numbered "which is better?" check is optional seasoning — never a substitute for
-the module's actual exercises.
+several beats — usually **two or three** real hands-on exercises the learner runs
+(e.g. Module 1: the vague cold-open ask, the structured re-ask, *and* the
+iterate-in-one-chat follow-up), plus framing and debriefs. Run the **whole** arc
+from the file — including the third rep when the file has one; that extra exercise
+is what makes the promised ~60 minutes real, so don't skip it unless the learner
+is clearly rushed. Do not replace the arc with one throwaway multiple-choice
+question and call the module done. A quick numbered "which is better?" check is
+optional seasoning — never a substitute for the module's actual exercises.
 
 Follow the **turn rhythm** above, keeping the session always in motion:
 

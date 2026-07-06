@@ -1,4 +1,4 @@
-# Module 3 — Chatbot → Agent  (~10 min)
+# Module 3 — Chatbot → Agent  (~13 min)
 
 Goal: they understand what turns a chat assistant into an *agent*, so the word
 "agent" stops being magic and becomes a checklist they can reason about.
@@ -34,6 +34,20 @@ result? Where should it have stopped to ask you?"
 Debrief: map what they saw onto the checklist. The "show me your plan first" is
 **transparency** — [ANTHROPIC-AGENTS]'s second core principle. The place they
 wanted it to pause is the **human checkpoint**.
+
+Exercise 2 — hold the checkpoint. Now practice the human checkpoint deliberately.
+In the same agent chat:
+```
+Before you change anything, show me ONLY your plan as a numbered list — the files
+you'd touch and why. Do not execute yet.
+```
+Read the plan, reply with **one** correction or constraint (e.g. "don't touch the
+test files", "handle the empty-input case too"), then let it proceed.
+**Wait.** Ask: did steering the plan change the outcome?
+
+Debrief: that pause is the **human checkpoint** made real — you shaped the work
+before the loop spent effort in the wrong direction. [ANTHROPIC-AGENTS]: catching
+it at the plan stage is how you stop small errors from compounding downstream.
 
 Honest note: [ANTHROPIC-AGENTS] says start simple — most value comes from a good
 single prompt; reach for full agents only when the task genuinely can't be

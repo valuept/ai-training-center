@@ -1,4 +1,4 @@
-# Module 4 — Foreseeing consequences  (~10 min)
+# Module 4 — Foreseeing consequences  (~13 min)
 
 Goal: they leave with a personal, honest map of what AI changes in *their* week —
 not a generic "AI will change everything." This is the "foresee the consequences"
@@ -34,6 +34,17 @@ Debrief — the three things that fall out:
    tell right from plausible-but-wrong is worth more, not less.
 3. **The "I do it" bucket is your moat** — judgment, accountability, stakeholder
    trust, and the context that never entered any model. Name theirs out loud.
+
+Exercise 2 — design one handoff. Pick one task they put in the middle bucket ("we
+do it together"). Ask them to spell out, in 3 lines: what the AI drafts, what they
+check before trusting it, and where their name goes on the result.
+e.g. "AI drafts the unit test → I verify it fails without the fix and covers the
+edge case → I own the merge."
+**Wait.** Ask: where exactly is your verification gate?
+
+Debrief: this is the abstract shift made concrete — a repeatable division of labor
+they can apply tomorrow. The gate they named is the core skill from module 2, now
+built into their workflow.
 
 Honest close (1 turn): AI removes toil and raises the floor on speed. It also
 raises the bar on judgment — more output to check, more decisions to own. The

@@ -1,4 +1,4 @@
-# Module 2 — Why it sometimes lies  (~10 min)
+# Module 2 — Why it sometimes lies  (~13 min)
 
 Goal: they can predict *when* AI is unreliable and have a habit for catching it.
 This is the module that keeps an SAP professional out of trouble.
@@ -41,6 +41,22 @@ time):
 
 Debrief: different answers = there is no single "the answer" inside it. Treat
 output as a **draft to verify**, never a citation.
+
+Exercise 3 — grounding fixes it. Take the **same** question from Exercise 1, but
+this time paste the real source and force a citation (new chat):
+```
+Using ONLY the text below, answer [the same question]. Quote the exact line you
+used; if the answer isn't in the text, say "not in the source."
+---
+[paste the real OSS note / the real method signature from the system / the real
+policy paragraph]
+```
+**Wait.** Ask: is this answer verifiable now? Where did the earlier confidence
+come from?
+
+Debrief: grounding it in real text turns a guess into something you can check
+line by line — that's trust-checklist item 2, live. The habit that scales: never
+ask from memory when you can paste the source.
 
 ## The trust checklist (give them this — it's their guardrail)
 Before you act on an AI answer:

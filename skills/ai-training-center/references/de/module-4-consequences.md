@@ -1,4 +1,4 @@
-# Modul 4 — Folgen abschätzen  (~10 Min)
+# Modul 4 — Folgen abschätzen  (~13 Min)
 
 Ziel: Sie gehen mit einer persönlichen, ehrlichen Landkarte dessen, was KI in
 *ihrer* Woche verändert — kein generisches „KI verändert alles“. Das ist das
@@ -42,6 +42,17 @@ Nachbesprechung — die drei Dinge, die dabei herausfallen:
 3. **Der „Ich mache es“-Korb ist dein Burggraben** — Urteil, Verantwortung,
    Stakeholder-Vertrauen und der Kontext, der nie in ein Modell gelangt ist.
    Benenne ihren laut.
+
+Übung 2 — eine Übergabe entwerfen. Nimm **eine** Aufgabe aus dem mittleren Korb
+(„wir zusammen"). Bitte sie, in 3 Zeilen zu formulieren: was die KI entwirft, was
+sie prüfen, bevor sie ihr trauen, und wo ihr Name auf dem Ergebnis steht.
+z. B. „KI entwirft den Unit-Test → ich prüfe, dass er ohne den Fix fehlschlägt und
+den Randfall abdeckt → ich verantworte den Merge."
+**Warten.** Frag: wo genau sitzt dein Verifikations-Tor?
+
+Nachbesprechung: das ist der abstrakte Wandel, konkret gemacht — eine
+wiederholbare Arbeitsteilung, die sie morgen anwenden können. Das benannte Tor ist
+die Kernkompetenz aus Modul 2, jetzt in ihren Ablauf eingebaut.
 
 Ehrlicher Abschluss (1 Zug): KI nimmt Mühsal weg und hebt die Untergrenze beim
 Tempo. Sie hebt auch die Latte beim Urteil — mehr Output zu prüfen, mehr

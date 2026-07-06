@@ -1,4 +1,4 @@
-# Module 1 — Cold open + Prompting that works  (~15 min)
+# Module 1 — Cold open + Prompting that works  (~18 min)
 
 Goal: they feel the gap between a vague ask and a good one, and leave with a
 repeatable prompting pattern they can use on real SAP work.
@@ -54,7 +54,25 @@ Debrief: the jump from ~5 to ~8+ came from *them*, not a better model. Name the
 pattern so it sticks: **Role · Task · Context · Constraints · Format · Example.**
 That's the reusable template — tell them to keep it.
 
-Timebox note: if they're loving it, one more re-ask; otherwise move to module 2.
+Timebox note: don't stop at one rebuild — Part C turns this into a habit.
+
+## Part C — Iterate, don't restart (5 min)
+
+Frame (1 turn): You rarely nail it in one shot, and you don't need to. Prompting
+is a conversation: keep the good answer and steer it with **one** targeted
+follow-up in the **same** chat, so the model keeps all the context.
+
+Exercise 3 — the follow-up. In the same chat as Exercise 2, send one refinement:
+```
+Good. Now [one concrete change]: e.g. "trim to the 3 key steps and add error
+handling", or "rewrite the table as commented ABAP", or "make the tone fit an
+email to a skeptical stakeholder".
+```
+**Wait.** Ask: did the follow-up land, or did it lose context?
+
+Debrief: notice it kept everything from before — that's the point of staying in
+one chat. Two or three small steers beat one giant prompt and are faster to
+review. [GOOGLE-PROMPTING] frames prompting as iterative — expect to refine.
 
 ## Check
 If their structured answer isn't clearly better than the vague one, the context

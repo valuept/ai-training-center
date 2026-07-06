@@ -1,4 +1,4 @@
-# Modul 1 — Kaltstart + Prompting, das funktioniert  (~15 Min)
+# Modul 1 — Kaltstart + Prompting, das funktioniert  (~18 Min)
 
 Ziel: Die lernende Person spürt die Lücke zwischen einer vagen Anfrage und einer
 guten und geht mit einem wiederverwendbaren Prompting-Muster für echte
@@ -62,8 +62,27 @@ besseren Modell. Benenne das Muster, damit es haftet: **Rolle · Aufgabe ·
 Kontext · Einschränkungen · Format · Beispiel.** Das ist die wiederverwendbare
 Vorlage — sag ihnen, sie sollen sie behalten.
 
-Zeit-Hinweis: wenn sie begeistert sind, eine weitere Neu-Anfrage; sonst weiter
-zu Modul 2.
+Zeit-Hinweis: bleib nicht bei einer Neu-Anfrage — Teil C macht daraus eine
+Gewohnheit.
+
+## Teil C — Iterieren statt neu anfangen (5 Min)
+
+Rahmen (1 Zug): Du triffst es selten im ersten Versuch — und musst du auch nicht.
+Prompting ist ein Gespräch: behalte die gute Antwort und steuere sie mit **einer**
+gezielten Rückfrage im **selben** Chat, damit das Modell den ganzen Kontext behält.
+
+Übung 3 — die Rückfrage. Im selben Chat wie Übung 2 schickst du eine Verfeinerung:
+```
+Gut. Jetzt [eine konkrete Änderung]: z. B. „kürze auf die 3 wichtigsten Schritte
+und ergänze Fehlerbehandlung", oder „schreib die Tabelle als kommentiertes ABAP
+um", oder „pass den Ton für eine E-Mail an eine:n skeptische:n Stakeholder:in an".
+```
+**Warten.** Frag: kam die Rückfrage an, oder ging der Kontext verloren?
+
+Nachbesprechung: es hat alles von vorher behalten — genau dafür bleibst du in
+**einem** Chat. Zwei, drei kleine Steuerungen schlagen einen Riesen-Prompt und
+sind schneller zu prüfen. [GOOGLE-PROMPTING] beschreibt Prompting als iterativ —
+rechne mit Verfeinern.
 
 ## Prüfung
 Wenn ihre strukturierte Antwort nicht klar besser ist als die vage, war der

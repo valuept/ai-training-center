@@ -1,4 +1,4 @@
-# Modul 2 — Warum es manchmal lügt  (~10 Min)
+# Modul 2 — Warum es manchmal lügt  (~13 Min)
 
 Ziel: Die lernende Person kann vorhersagen, *wann* KI unzuverlässig ist, und hat
 eine Gewohnheit, um es zu erkennen. Dieses Modul bewahrt SAP-Profis vor Ärger.
@@ -43,6 +43,23 @@ richtigen Format* falsch ist.
 
 Nachbesprechung: verschiedene Antworten = es gibt keine einzige „die Antwort“ in
 ihm. Behandle Output als **Entwurf zum Verifizieren**, nie als Beleg.
+
+Übung 3 — Verankern behebt es. Nimm **dieselbe** Frage aus Übung 1, aber gib
+diesmal die echte Quelle mit und erzwing ein Zitat (neuer Chat):
+```
+Beantworte [dieselbe Frage] NUR mit dem Text unten. Zitiere die exakte Zeile, die
+du genutzt hast; steht die Antwort nicht im Text, sag „nicht in der Quelle".
+---
+[echten OSS-Hinweis / echte Methodensignatur aus dem System / echten
+Richtlinien-Absatz einfügen]
+```
+**Warten.** Frag: ist die Antwort jetzt überprüfbar? Woher kam vorher die
+Selbstsicherheit?
+
+Nachbesprechung: im echten Text verankert wird aus dem Raten etwas, das du Zeile
+für Zeile prüfen kannst — das ist Punkt 2 der Vertrauens-Checkliste, live. Die
+Gewohnheit, die skaliert: nie aus dem Gedächtnis fragen, wenn du die Quelle
+einfügen kannst.
 
 ## Die Vertrauens-Checkliste (gib ihnen diese — sie ist ihre Leitplanke)
 Bevor du auf eine KI-Antwort hin handelst:
