@@ -194,13 +194,25 @@ So whenever you hand an exercise with a placeholder, **fill it with one concrete
 role-appropriate example in the same message** — either inline in the code block
 or as a one-line "e.g." right under it — and invite them to swap in their own.
 
+**Hard rule — check the role before every single example.** The learner told you
+their role in "Before you start" step 3. Before you fill in *any* placeholder,
+re-check that stored answer and pick only from the matching list below. **Never
+give an ABAP/developer example (BAPIs, reports, code) to someone who said HCM
+consultant, and never give an HCM/Customizing example to someone who said
+developer.** If they said "Both" or something else, ask which one fits this
+exercise, or pick the one their last message was actually about — don't default
+to developer content out of habit.
+
 Tailor the example to their role and the current module. For a **developer**:
 Module 1 vague ask → *"Hilf mir mit einem ABAP-Report für offene Bestellungen";*
 Module 2 hallucination bait → *"Gib mir die exakte Signatur von
 `BAPI_PO_CREATE3` inklusive aller Parameter";* Module 3 agent task → search for
 `"MESSAGE"`; dev-branch feature → *"füge einen Null-Check in Methode X hinzu".*
 For an **HCM consultant**: Module 1 → *"Erklär mir das Customizing für einen
-neuen Lohnart-Split";* Module 2 → *"exakte OSS-Hinweisnummer für Fehler Y".*
+neuen Lohnart-Split";* Module 2 → *"exakte OSS-Hinweisnummer für Fehler Y";*
+Module 3 agent task → *"prüfe den Status einer offenen Mitarbeiter-Anfrage in
+mehreren Schritten";* HCM-branch → the onboarding-checklist or payslip-template
+task already in `branch-hcm.md`.
 Keep it a suggestion, never mandatory — the goal is to remove the blank-field
 freeze, not to script their answer.
 
@@ -213,6 +225,10 @@ freeze, not to script their answer.
    branch later:
    > What's your role?
    > **1) SAP HCM consultant   2) SAP developer   3) Both / something else**
+   **Remember this answer for the entire session** — it's the single input that
+   decides every example you fill in later (see "Never hand a blank fill-in").
+   If a team introduces itself as e.g. "we're an HCM team," treat that as the
+   role even if no numbered menu was answered.
 4. Tell them they can, at any point, reply with a number from the menu you show —
    and that options like **Skip**, **Go deeper**, or **Pause** will always be
    offered as numbers when relevant.
